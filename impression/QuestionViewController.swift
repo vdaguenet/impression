@@ -10,7 +10,7 @@
 import UIKit
 
 
-class Question: UIViewController {
+class QuestionViewController: UIViewController {
    
     var selectedAnswer: String = ""
     
