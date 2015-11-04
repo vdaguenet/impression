@@ -9,11 +9,11 @@
 
 import UIKit
 
-
 class QuestionViewController: UIViewController {
    
     var selectedAnswer: String = ""
-    
+    var model: QuestionModel!
+   
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var answerTop: UILabel!
     @IBOutlet weak var answerBottom: UILabel!
@@ -25,9 +25,14 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.model = QuestionModel()
         self.label.text = "Lorem ipsum dolor"
         self.answerTop.text = "I am the prop top"
         self.answerBottom.text = "I am the prop bottom"
+        
+        var test = self.model.findAll()
+        print(test)
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {

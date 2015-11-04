@@ -9,6 +9,9 @@
 import UIKit
 import CoreData
 
+let DB_NAME = "impression.sqlite3";
+var DB_PATH = "";
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let PATH = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
+        let FileManager = NSFileManager.defaultManager()
+        let toPath = "\(PATH)/\(DB_NAME)"
+        
+        if (false == FileManager.fileExistsAtPath(toPath)) {
+            print("NO DB")
+            let fromPath = NSBundle.pathsForResourcesOfType(".sqlite3", inDirectory: NSBundle.mainBundle().bundlePath)[0]
+            
+            do {
+                try FileManager.copyItemAtPath(fromPath, toPath: toPath)
+                print("Database copied")
+            } catch {
+                print("Can not copy database")
+            }
+        } else {
+            print("DB exists")
+        }
+        
+        DB_PATH = toPath;
+        
         return true
     }
 
