@@ -1,5 +1,5 @@
 //
-//  Question.swift
+//  QuestionViewController.swift
 //  impression
 //
 //  Created by DAGUENET Valentin on 03/11/15.
