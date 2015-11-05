@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F10E88B1BEA158A004EED39 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10E88A1BEA158A004EED39 /* QuestionModel.swift */; };
+		4F60E0261BEB608E003523DF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE2EB5C1BEB5587001EFB7C /* SQLite.framework */; };
+		4F60E0271BEB608E003523DF /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE2EB5C1BEB5587001EFB7C /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F84898A1BEA5F130092C758 /* impression.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8489891BEA5F130092C758 /* impression.sqlite3 */; };
 		4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */; };
 		4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7CE5E1BE779DC0043FD5D /* AppDelegate.swift */; };
@@ -21,6 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4F60E0281BEB608F003523DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = DC2B29E11B26F718001C60EA;
+			remoteInfo = "SQLite iOS";
+		};
 		4FE2EB5B1BEB5587001EFB7C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */;
@@ -93,8 +102,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4F60E02A1BEB608F003523DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4F60E0271BEB608E003523DF /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4F10E88A1BEA158A004EED39 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
+		4F60E0221BEB6055003523DF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		4F60E0241BEB6065003523DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4F8489891BEA5F130092C758 /* impression.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = impression.sqlite3; path = db/impression.sqlite3; sourceTree = "<group>"; };
 		4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = vendors/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
@@ -119,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F60E0261BEB608E003523DF /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +192,8 @@
 		4FF7CE521BE779DB0043FD5D = {
 			isa = PBXGroup;
 			children = (
+				4F60E0241BEB6065003523DF /* libsqlite3.tbd */,
+				4F60E0221BEB6055003523DF /* libsqlite3.0.tbd */,
 				4F8489891BEA5F130092C758 /* impression.sqlite3 */,
 				4FF7CE5D1BE779DB0043FD5D /* impression */,
 				4FF7CE751BE779DC0043FD5D /* impressionTests */,
@@ -228,10 +256,12 @@
 				4FF7CE571BE779DB0043FD5D /* Sources */,
 				4FF7CE581BE779DB0043FD5D /* Frameworks */,
 				4FF7CE591BE779DB0043FD5D /* Resources */,
+				4F60E02A1BEB608F003523DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4F60E0291BEB608F003523DF /* PBXTargetDependency */,
 			);
 			name = impression;
 			productName = impression;
@@ -442,6 +472,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4F60E0291BEB608F003523DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SQLite iOS";
+			targetProxy = 4F60E0281BEB608F003523DF /* PBXContainerItemProxy */;
+		};
 		4FF7CE741BE779DC0043FD5D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4FF7CE5A1BE779DB0043FD5D /* impression */;
@@ -561,6 +596,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = impression/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "arth-val.impression";
@@ -575,6 +611,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = impression/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "arth-val.impression";
