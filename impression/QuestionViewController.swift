@@ -27,12 +27,10 @@ class QuestionViewController: UIViewController {
         super.viewDidLoad()
 
         self.model = QuestionModel()
-        self.label.text = "Lorem ipsum dolor"
-        self.answerTop.text = "I am the prop top"
-        self.answerBottom.text = "I am the prop bottom"
-        
-        var test = self.model.findAll()
-        print(test)
+        let question = self.model.getRandomQuestion()
+        self.label.text = question.get(self.model.expressions.sentence)
+        self.answerTop.text = question.get(self.model.expressions.firstProp)
+        self.answerBottom.text = question.get(self.model.expressions.secondProp)
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {

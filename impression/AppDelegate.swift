@@ -22,11 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let PATH = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
         let FileManager = NSFileManager.defaultManager()
+        let fromPath = NSBundle.pathsForResourcesOfType(".sqlite3", inDirectory: NSBundle.mainBundle().bundlePath)[0]
         let toPath = "\(PATH)/\(DB_NAME)"
         
-        if (false == FileManager.fileExistsAtPath(toPath)) {
+
+        if (FileManager.fileExistsAtPath(toPath) == true) {
+            print("DB exists")
+            if (FileManager.contentsEqualAtPath(fromPath, andPath: toPath) == false) {
+                do {
+                    try FileManager.removeItemAtPath(toPath)
+                    try FileManager.copyItemAtPath(fromPath, toPath: toPath)
+                    print("Database removed and copied")
+                } catch {
+                    print("Can not remove and copy database")
+                }
+            }
+            
+        } else {
             print("NO DB")
-            let fromPath = NSBundle.pathsForResourcesOfType(".sqlite3", inDirectory: NSBundle.mainBundle().bundlePath)[0]
+            
             
             do {
                 try FileManager.copyItemAtPath(fromPath, toPath: toPath)
@@ -34,8 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } catch {
                 print("Can not copy database")
             }
-        } else {
-            print("DB exists")
         }
         
         DB_PATH = toPath;
