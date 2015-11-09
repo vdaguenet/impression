@@ -15,10 +15,11 @@ class QuestionViewController: UIViewController {
     var model: QuestionModel!
    
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var answerTop: UILabel!
-    @IBOutlet weak var iconTop: UIImageView!
-    @IBOutlet weak var answerBottom: UILabel!
-    @IBOutlet weak var iconBottom: UIImageView!
+    @IBOutlet weak var answerBottom: UIImageView!
+    @IBOutlet weak var answerTop: UIImageView!
+    @IBOutlet weak var answerTopBlurred: UIImageView!
+    @IBOutlet weak var answerBottomBlurred: UIImageView!
+    
     @IBOutlet weak var slider: UISlider!{
         didSet{
             slider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
@@ -30,32 +31,66 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+                
         self.model = QuestionModel()
         let question = self.model.getRandomQuestion()
         self.label.text = question.get(self.model.expressions.sentence).capitalizedString
-        self.answerTop.text = question.get(self.model.expressions.firstProp).uppercaseString
-        self.iconTop.image = UIImage(named: "cocktail")
-        self.answerBottom.text = question.get(self.model.expressions.secondProp).uppercaseString
-        self.iconBottom.image = UIImage(named: "fragrents")
+        
+        let imageTop = UIImage(named: "sortir-amis")
+        self.answerTop.image = imageTop
+        self.answerTopBlurred.image = self.blurImage(imageTop!)
+        self.answerTopBlurred.alpha = 0.0
+        
+        let imageBottom = UIImage(named: "prendre-soin")
+        self.answerBottom.image = imageBottom
+        self.answerBottomBlurred.image = self.blurImage(imageBottom!)
+        self.answerBottomBlurred.alpha = 0.0
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {
         var dest = 0.0
-
+        
         if (sender.value > 0.5) {
             dest = 1.0
-            self.selectedAnswer = self.answerTop.text!
+            print("answer top")
+            
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
+            UIView.setAnimationDuration(0.4)
+            self.answerBottom.alpha = 0.0
+            self.answerBottomBlurred.alpha = 1.0
+            self.answerTop.alpha = 1.0
+            self.answerTopBlurred.alpha = 0.0
+            UIView.commitAnimations()
+            
         } else {
-            self.selectedAnswer = self.answerBottom.text!
+            print("answer bottom")
+            
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
+            UIView.setAnimationDuration(0.4)
+            self.answerBottom.alpha = 1.0
+            self.answerBottomBlurred.alpha = 0.0
+            self.answerTop.alpha = 0.0
+            self.answerTopBlurred.alpha = 1.0
+            UIView.commitAnimations()
         }
-        print("answer \(self.selectedAnswer)")
-        
+       
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
         UIView.setAnimationDuration(0.3)
         self.slider.setValue(Float(dest), animated: true)
         UIView.commitAnimations()
         
+    }
+    
+    func blurImage(image: UIImage) -> UIImage {
+        let imageToBlur = CIImage(image: image)
+        let blurfilter = CIFilter(name: "CIGaussianBlur")
+        blurfilter!.setValue(imageToBlur, forKey: "inputImage")
+        blurfilter!.setValue(15.0, forKey: "inputRadius")
+        let resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
+
+        return UIImage(CIImage: resultImage)
     }
 }
