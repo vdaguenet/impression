@@ -37,7 +37,7 @@ class QuestionViewController: UIViewController {
         self.answerTop.text = question.get(self.model.expressions.firstProp).uppercaseString
         self.iconTop.image = UIImage(named: "cocktail")
         self.answerBottom.text = question.get(self.model.expressions.secondProp).uppercaseString
-        self.iconBottom.image = UIImage(named: "cocktail")
+        self.iconBottom.image = UIImage(named: "fragrents")
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {
