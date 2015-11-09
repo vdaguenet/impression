@@ -16,10 +16,15 @@ class QuestionViewController: UIViewController {
    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var answerTop: UILabel!
+    @IBOutlet weak var iconTop: UIImageView!
     @IBOutlet weak var answerBottom: UILabel!
+    @IBOutlet weak var iconBottom: UIImageView!
     @IBOutlet weak var slider: UISlider!{
         didSet{
             slider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+            slider.minimumTrackTintColor = UIColor(red: 0.773, green: 0.773, blue: 0.773, alpha: 1.0)
+            slider.maximumTrackTintColor = UIColor(red: 0.773, green: 0.773, blue: 0.773, alpha: 1.0)
+            slider.thumbTintColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
         }
     }
     
@@ -28,9 +33,11 @@ class QuestionViewController: UIViewController {
 
         self.model = QuestionModel()
         let question = self.model.getRandomQuestion()
-        self.label.text = question.get(self.model.expressions.sentence)
-        self.answerTop.text = question.get(self.model.expressions.firstProp)
-        self.answerBottom.text = question.get(self.model.expressions.secondProp)
+        self.label.text = question.get(self.model.expressions.sentence).capitalizedString
+        self.answerTop.text = question.get(self.model.expressions.firstProp).uppercaseString
+        self.iconTop.image = UIImage(named: "cocktail")
+        self.answerBottom.text = question.get(self.model.expressions.secondProp).uppercaseString
+        self.iconBottom.image = UIImage(named: "cocktail")
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {
