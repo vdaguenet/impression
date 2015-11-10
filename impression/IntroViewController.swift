@@ -11,7 +11,7 @@ import UIKit
 class IntroViewController: UIViewController {
 
     @IBOutlet weak var btnStart: UIButton!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }

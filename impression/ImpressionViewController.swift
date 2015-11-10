@@ -11,6 +11,7 @@ import UIKit
 class ImpressionViewController: UIViewController {
     @IBOutlet weak var answersContainer: UILabel!
 
+    @IBAction func backFromSurpriseView(segue: UIStoryboardSegue) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()

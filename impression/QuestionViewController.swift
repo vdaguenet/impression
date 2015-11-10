@@ -21,7 +21,6 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerTop: UIImageView!
     @IBOutlet weak var answerTopBlurred: UIImageView!
     @IBOutlet weak var answerBottomBlurred: UIImageView!
-    
     @IBOutlet weak var slider: UISlider!{
         didSet{
             slider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
@@ -92,7 +91,7 @@ class QuestionViewController: UIViewController {
         self.slider.setValue(Float(dest), animated: true)
         UIView.commitAnimations()
         
-        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let delay = 0.5 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) {
             if (GlobalVars.currentQuestion < GlobalVars.NB_QUESTION) {
