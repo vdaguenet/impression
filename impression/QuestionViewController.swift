@@ -45,6 +45,8 @@ class QuestionViewController: UIViewController {
         self.answerBottom.image = imageBottom
         self.answerBottomBlurred.image = self.blurImage(imageBottom!)
         self.answerBottomBlurred.alpha = 0.0
+        
+        GlobalVars.currentQuestion++;
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {
@@ -82,6 +84,17 @@ class QuestionViewController: UIViewController {
         self.slider.setValue(Float(dest), animated: true)
         UIView.commitAnimations()
         
+        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            if (GlobalVars.currentQuestion < GlobalVars.NB_QUESTION) {
+                self.gotoNextQuestion()
+            } else {
+                self.gotoImpression()
+            }
+        }
+        
+       
     }
     
     func blurImage(image: UIImage) -> UIImage {
@@ -92,5 +105,15 @@ class QuestionViewController: UIViewController {
         let resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
 
         return UIImage(CIImage: resultImage)
+    }
+    
+    func gotoNextQuestion() {
+        let questionViewControllerObejct = self.storyboard?.instantiateViewControllerWithIdentifier("QuestionView") as! QuestionViewController
+        self.navigationController?.pushViewController(questionViewControllerObejct, animated: true)
+    }
+    
+    func gotoImpression() {
+        let impressionViewControllerObejct = self.storyboard?.instantiateViewControllerWithIdentifier("ImpressionView") as! ImpressionViewController
+        self.navigationController?.pushViewController(impressionViewControllerObejct, animated: true)
     }
 }

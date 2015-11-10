@@ -9,9 +9,6 @@
 import UIKit
 import CoreData
 
-let DB_NAME = "impression.sqlite3";
-var DB_PATH = "";
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let PATH = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.UserDomainMask, true)[0]
         let FileManager = NSFileManager.defaultManager()
         let fromPath = NSBundle.pathsForResourcesOfType(".sqlite3", inDirectory: NSBundle.mainBundle().bundlePath)[0]
-        let toPath = "\(PATH)/\(DB_NAME)"
+        let toPath = "\(PATH)/\(GlobalVars.DB_NAME)"
         
 
         if (FileManager.fileExistsAtPath(toPath) == true) {
@@ -50,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        DB_PATH = toPath;
+        GlobalVars.dbPath = toPath;
         
         return true
     }

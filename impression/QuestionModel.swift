@@ -23,7 +23,7 @@ class QuestionModel{
     
     init() {
         do {
-            self.db = try Connection(DB_PATH)
+            self.db = try Connection(GlobalVars.dbPath)
             print("Connected to database")
             
             self.table = Table("question")
