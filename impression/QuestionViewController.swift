@@ -88,7 +88,7 @@ class QuestionViewController: UIViewController {
         let imageToBlur = CIImage(image: image)
         let blurfilter = CIFilter(name: "CIGaussianBlur")
         blurfilter!.setValue(imageToBlur, forKey: "inputImage")
-        blurfilter!.setValue(15.0, forKey: "inputRadius")
+        blurfilter!.setValue(10.0, forKey: "inputRadius")
         let resultImage = blurfilter!.valueForKey("outputImage") as! CIImage
 
         return UIImage(CIImage: resultImage)

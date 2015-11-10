@@ -98,14 +98,14 @@ vos émotions, chaque jour.</string>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortir-amis" id="gQc-5L-BKB">
                                 <rect key="frame" x="59" y="114" width="203" height="65"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortir-amis" id="2ej-GI-PrL">
-                                <rect key="frame" x="20" y="100" width="292" height="94"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prendre-soin" id="F5h-bl-UZJ">
                                 <rect key="frame" x="59" y="436" width="203" height="65"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prendre-soin" id="LwG-zh-DP7">
-                                <rect key="frame" x="20" y="422" width="292" height="94"/>
+                                <rect key="frame" x="54" y="424" width="214" height="88"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sortir-amis" id="2ej-GI-PrL">
+                                <rect key="frame" x="53" y="103" width="214" height="88"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
