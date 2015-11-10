@@ -14,6 +14,8 @@ struct QuestionExpressions {
     var sentence = SQLite.Expression<String>("sentence")
     var firstProp = SQLite.Expression<String>("firstProp")
     var secondProp = SQLite.Expression<String>("secondProp")
+    var firstAnswer = SQLite.Expression<String>("firstAnswer")
+    var secondAnswer = SQLite.Expression<String>("secondAnswer")
 }
 
 class QuestionModel{
@@ -42,8 +44,14 @@ class QuestionModel{
     
     func getRandomQuestion() -> SQLite.Row {
         let count = try db.scalar(self.table.count)
-        let i = arc4random_uniform(UInt32(count)) + 1
+        let i = Int64(arc4random_uniform(UInt32(count)) + 1)
         
-        return Array(try self.db.prepare(self.table.filter(self.expressions.id == Int64(i))))[0]
+        if (GlobalVars.displayedQuestions.contains(i)) {
+            return self.getRandomQuestion()
+        }
+        
+        GlobalVars.displayedQuestions.append(i)
+        
+        return Array(try self.db.prepare(self.table.filter(self.expressions.id == i)))[0]
     }
 }

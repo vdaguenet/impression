@@ -9,5 +9,17 @@
 import UIKit
 
 class ImpressionViewController: UIViewController {
+    @IBOutlet weak var answersContainer: UILabel!
 
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(GlobalVars.questionAnswers)
+        
+        for answer in GlobalVars.questionAnswers {
+            self.answersContainer.text = self.answersContainer.text! + "\n - " + answer
+        }
+        
+    }
 }

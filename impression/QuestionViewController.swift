@@ -12,6 +12,8 @@ import UIKit
 class QuestionViewController: UIViewController {
    
     var selectedAnswer: String = ""
+    var answerTopStr: String = ""
+    var answerBottomStr: String = ""
     var model: QuestionModel!
    
     @IBOutlet weak var label: UILabel!
@@ -36,15 +38,17 @@ class QuestionViewController: UIViewController {
         let question = self.model.getRandomQuestion()
         self.label.text = question.get(self.model.expressions.sentence).capitalizedString
         
-        let imageTop = UIImage(named: "sortir-amis")
+        let imageTop = UIImage(named: question.get(self.model.expressions.firstProp))
         self.answerTop.image = imageTop
         self.answerTopBlurred.image = self.blurImage(imageTop!)
         self.answerTopBlurred.alpha = 0.0
+        self.answerTopStr = question.get(self.model.expressions.firstAnswer)
         
-        let imageBottom = UIImage(named: "prendre-soin")
+        let imageBottom = UIImage(named: question.get(self.model.expressions.secondProp))
         self.answerBottom.image = imageBottom
         self.answerBottomBlurred.image = self.blurImage(imageBottom!)
         self.answerBottomBlurred.alpha = 0.0
+        self.answerBottomStr = question.get(self.model.expressions.secondAnswer)
         
         GlobalVars.currentQuestion++;
     }
@@ -64,7 +68,9 @@ class QuestionViewController: UIViewController {
             self.answerTop.alpha = 1.0
             self.answerTopBlurred.alpha = 0.0
             UIView.commitAnimations()
+
             
+            GlobalVars.questionAnswers.append(self.answerTopStr)
         } else {
             print("answer bottom")
             
@@ -76,6 +82,8 @@ class QuestionViewController: UIViewController {
             self.answerTop.alpha = 0.0
             self.answerTopBlurred.alpha = 1.0
             UIView.commitAnimations()
+            
+            GlobalVars.questionAnswers.append(self.answerBottomStr)
         }
        
         UIView.beginAnimations(nil, context: nil)
