@@ -34,6 +34,7 @@
 		4F73361D1BF09E3D009C160C /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F73360A1BF09E3D009C160C /* Raleway-ThinItalic.ttf */; };
 		4F84898A1BEA5F130092C758 /* impression.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8489891BEA5F130092C758 /* impression.sqlite3 */; };
 		4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */; };
+		4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637A1BF4A73600BB188A /* MapViewController.swift */; };
 		4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7CE5E1BE779DC0043FD5D /* AppDelegate.swift */; };
 		4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7CE601BE779DC0043FD5D /* IntroViewController.swift */; };
 		4FF7CE641BE779DC0043FD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7CE621BE779DC0043FD5D /* Main.storyboard */; };
@@ -165,6 +166,7 @@
 		4F73360A1BF09E3D009C160C /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
 		4F8489891BEA5F130092C758 /* impression.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = impression.sqlite3; path = db/impression.sqlite3; sourceTree = "<group>"; };
 		4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		4F93637A1BF4A73600BB188A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = vendors/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
 		4FF7CE5B1BE779DB0043FD5D /* impression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = impression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF7CE5E1BE779DC0043FD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 			name = Question;
 			sourceTree = "<group>";
 		};
+		4F9363721BF4A6C300BB188A /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				4F93637A1BF4A73600BB188A /* MapViewController.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
 		4FE2EB501BEB5587001EFB7C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +327,7 @@
 		4FF7CE5D1BE779DB0043FD5D /* impression */ = {
 			isa = PBXGroup;
 			children = (
+				4F9363721BF4A6C300BB188A /* Map */,
 				4F28C9631BF235420011AE27 /* Surprise */,
 				4F28C9601BF1EE8A0011AE27 /* Impression */,
 				4F15E4B01BF097DE004CF144 /* Intro */,
@@ -571,6 +582,7 @@
 				4F28C9581BF1EBAA0011AE27 /* GlobalVars.swift in Sources */,
 				4F10E88B1BEA158A004EED39 /* QuestionModel.swift in Sources */,
 				4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */,
+				4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
 				4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */,

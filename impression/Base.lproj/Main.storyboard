@@ -167,6 +167,64 @@ vos émotions, chaque jour.</string>
             </objects>
             <point key="canvasLocation" x="1116" y="449"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1n3-rf-CBT">
+            <objects>
+                <viewController id="8GH-I3-eJQ" customClass="MapViewController" customModule="impression" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cxZ-LD-Tpc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="Rgz-v7-D29">
+                                <rect key="frame" x="0.0" y="63" width="320" height="505"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="BDF-wW-HW6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="505"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7RG-ih-UNI">
+                                <rect key="frame" x="20" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Retour"/>
+                                <connections>
+                                    <segue destination="hcd-Fg-YiV" kind="unwind" unwindAction="backFromMapView:" id="S87-OR-i0p"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO">
+                                <rect key="frame" x="53" y="78" width="247" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I61-U5-DM6">
+                                <rect key="frame" x="23" y="513" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sight">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onResetTouch:" destination="8GH-I3-eJQ" eventType="touchDown" id="kSo-4S-vl5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="oga-cw-Mp8"/>
+                    <connections>
+                        <outlet property="inputText" destination="Uae-F1-QZO" id="nTA-3M-PJZ"/>
+                        <outlet property="mapView" destination="BDF-wW-HW6" id="sLR-o2-4Dr"/>
+                        <outlet property="resetPositionBtn" destination="I61-U5-DM6" id="GAI-Ds-Br6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sBV-YG-PTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hcd-Fg-YiV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="1272"/>
+        </scene>
         <!--Surprise View Controller-->
         <scene sceneID="wJa-TA-XKk">
             <objects>
@@ -175,19 +233,19 @@ vos émotions, chaque jour.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9AM-zo-n9i">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="9AM-zo-n9i">
                                 <rect key="frame" x="20" y="61" width="280" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="d2F-f4-UGq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="d2F-f4-UGq">
                                 <rect key="frame" x="20" y="197" width="90" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eHc-En-Jat">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="eHc-En-Jat">
                                 <rect key="frame" x="115" y="197" width="90" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="P0K-2V-HfE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="P0K-2V-HfE">
                                 <rect key="frame" x="210" y="197" width="90" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -202,6 +260,9 @@ vos émotions, chaque jour.</string>
                                 <rect key="frame" x="95" y="477" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Choisir un magasin"/>
+                                <connections>
+                                    <segue destination="8GH-I3-eJQ" kind="push" id="66O-hX-v2p"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UJM-qL-YDl">
                                 <rect key="frame" x="20" y="20" width="46" height="30"/>
@@ -220,7 +281,7 @@ vos émotions, chaque jour.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-qh-I7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="h7Y-od-Ic2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1643" y="449"/>
+            <point key="canvasLocation" x="38" y="1272"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KQC-pr-b5L">
@@ -251,8 +312,10 @@ vos émotions, chaque jour.</string>
         <image name="by-sisley" width="292" height="73"/>
         <image name="impression" width="325" height="53"/>
         <image name="intro-background" width="375" height="667"/>
+        <image name="placeholder" width="1280" height="800"/>
         <image name="prendre-soin" width="496" height="167"/>
         <image name="question-background" width="750" height="1334"/>
+        <image name="sight" width="40" height="40"/>
         <image name="sortir-amis" width="496" height="167"/>
     </resources>
 </document>
