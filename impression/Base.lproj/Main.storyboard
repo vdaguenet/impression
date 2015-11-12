@@ -175,6 +175,10 @@ vos émotions, chaque jour.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map-background" id="5hF-bW-O03">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <view contentMode="scaleToFill" id="Rgz-v7-D29">
                                 <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,9 +198,20 @@ vos émotions, chaque jour.</string>
                                     <segue destination="hcd-Fg-YiV" kind="unwind" unwindAction="backFromMapView:" id="S87-OR-i0p"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO">
-                                <rect key="frame" x="53" y="78" width="247" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZM2-nb-lja">
+                                <rect key="frame" x="23" y="73" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onResetTouch:" destination="8GH-I3-eJQ" eventType="touchDown" id="qaU-75-VIi"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO">
+                                <rect key="frame" x="78" y="73" width="222" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -312,6 +327,8 @@ vos émotions, chaque jour.</string>
         <image name="by-sisley" width="292" height="73"/>
         <image name="impression" width="325" height="53"/>
         <image name="intro-background" width="375" height="667"/>
+        <image name="list" width="40" height="40"/>
+        <image name="map-background" width="375" height="667"/>
         <image name="placeholder" width="1280" height="800"/>
         <image name="prendre-soin" width="496" height="167"/>
         <image name="question-background" width="750" height="1334"/>

@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var resetPositionBtn: UIButton!
@@ -26,6 +26,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.mapView.delegate = self
+        
         if (CLLocationManager.locationServicesEnabled()) {
             self.locationManager = CLLocationManager()
             self.locationManager.delegate = self
@@ -34,9 +36,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             self.locationManager.startUpdatingLocation()
         }
         
-//        self.centerMapOnLocation(initialLocation)
-        
-//        self.addStorePins()
+        self.addStorePins()
     }
     
     func checkLocationAuthorizationStatus() {
@@ -48,11 +48,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func addStorePins() {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2D(latitude: 21.282778, longitude: -157.829444)
-        annotation.title = "Magasin Test"
-        annotation.subtitle = "test"
-        self.mapView.addAnnotation(annotation)
+        let pointAnnotation = CustomPointAnnotation()
+        pointAnnotation.coordinate = CLLocationCoordinate2DMake(48.864716, 2.349014)
+        pointAnnotation.title = "Magasin test"
+        pointAnnotation.subtitle = "Subtitle"
+        pointAnnotation.imageName = "pin"
+        
+        self.mapView.addAnnotation(pointAnnotation)
     }
     
     @IBAction func onResetTouch(sender: AnyObject) {
@@ -76,4 +78,28 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
+    }
 }

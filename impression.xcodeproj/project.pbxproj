@@ -35,6 +35,7 @@
 		4F84898A1BEA5F130092C758 /* impression.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = 4F8489891BEA5F130092C758 /* impression.sqlite3 */; };
 		4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */; };
 		4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637A1BF4A73600BB188A /* MapViewController.swift */; };
+		4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */; };
 		4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7CE5E1BE779DC0043FD5D /* AppDelegate.swift */; };
 		4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7CE601BE779DC0043FD5D /* IntroViewController.swift */; };
 		4FF7CE641BE779DC0043FD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7CE621BE779DC0043FD5D /* Main.storyboard */; };
@@ -167,6 +168,7 @@
 		4F8489891BEA5F130092C758 /* impression.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = impression.sqlite3; path = db/impression.sqlite3; sourceTree = "<group>"; };
 		4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		4F93637A1BF4A73600BB188A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = vendors/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
 		4FF7CE5B1BE779DB0043FD5D /* impression.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = impression.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF7CE5E1BE779DC0043FD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				4F93637A1BF4A73600BB188A /* MapViewController.swift */,
+				4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */,
 				4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
+				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
 				4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */,
 				4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */,
