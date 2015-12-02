@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SQLite
 
 struct GlobalVars {
     // Constants
@@ -17,4 +18,5 @@ struct GlobalVars {
     static var currentQuestion = 0
     static var displayedQuestions: [Int64] = []
     static var questionAnswerProducts: [Int64] = []
+    
 }

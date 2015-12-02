@@ -8,12 +8,14 @@
 
 import UIKit
 import CoreData
+import SQLite
+
+var DB_CONNECTION: Connection!
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -48,6 +50,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         GlobalVars.dbPath = toPath;
+        
+        do {
+            DB_CONNECTION = try Connection(GlobalVars.dbPath)
+            print("[App] Connected to database")
+        } catch {
+            print("[App] Can not connect to database")
+        }
         
         return true
     }

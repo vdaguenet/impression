@@ -19,32 +19,19 @@ struct QuestionExpressions {
 }
 
 class QuestionModel{
-    var db: Connection!
-    var table: Table!
+    var table = Table("question")
     let expressions = QuestionExpressions()
     
-    init() {
-        do {
-            self.db = try Connection(GlobalVars.dbPath)
-            print("[Question] Connected to database")
-
-            self.table = Table("question")
-
-            
-        } catch {
-            print("[Question] Can not connect to database")
-        }
-        
-    }
+    init() {}
     
     func findAll() -> [SQLite.Row] {
-        let rows = Array(try self.db.prepare(self.table))
+        let rows = Array(try DB_CONNECTION.prepare(self.table))
 
         return rows
     }
     
     func getRandomQuestion() -> SQLite.Row {
-        let count = try db.scalar(self.table.count)
+        let count = try DB_CONNECTION.scalar(self.table.count)
         
         let i = Int64(arc4random_uniform(UInt32(count)) + 1)
         
@@ -54,6 +41,6 @@ class QuestionModel{
         
         GlobalVars.displayedQuestions.append(i)
         
-        return Array(try self.db.prepare(self.table.filter(self.expressions.id == i)))[0]
+        return Array(try DB_CONNECTION.prepare(self.table.filter(self.expressions.id == i)))[0]
     }
 }

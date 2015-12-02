@@ -17,21 +17,9 @@ struct ProductExpressions {
 }
 
 class ProductModel {
-    var db: Connection!
-    var table: Table!
+
+    var table = Table("product")
     let expressions = ProductExpressions()
     
-    init() {
-        do {
-            self.db = try Connection(GlobalVars.dbPath)
-            print("[Product] Connected to database")
-            
-            self.table = Table("product")
-            
-            
-        } catch {
-            print("[Product] Can not connect to database")
-        }
-        
-    }
+    init() {}
 }
