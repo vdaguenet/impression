@@ -69,7 +69,7 @@ class QuestionViewController: UIViewController {
             UIView.commitAnimations()
 
             
-            GlobalVars.questionAnswerProducts.append(self.productIdAnswerTop)
+            GlobalVars.questionAnswers.append(self.productIdAnswerTop)
         } else {
             print("answer bottom")
             
@@ -82,7 +82,7 @@ class QuestionViewController: UIViewController {
             self.answerTopBlurred.alpha = 1.0
             UIView.commitAnimations()
             
-            GlobalVars.questionAnswerProducts.append(self.productIdAnswerBottom)
+            GlobalVars.questionAnswers.append(self.productIdAnswerBottom)
         }
        
         UIView.beginAnimations(nil, context: nil)

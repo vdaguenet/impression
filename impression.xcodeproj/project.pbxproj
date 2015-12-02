@@ -276,7 +276,6 @@
 			children = (
 				4F10E88A1BEA158A004EED39 /* QuestionModel.swift */,
 				4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */,
-				4FF2FD871C0F02B300EFB2D7 /* ProductModel.swift */,
 			);
 			name = Question;
 			sourceTree = "<group>";
@@ -333,6 +332,7 @@
 		4FF7CE5D1BE779DB0043FD5D /* impression */ = {
 			isa = PBXGroup;
 			children = (
+				4FF2FD871C0F02B300EFB2D7 /* ProductModel.swift */,
 				4F9363721BF4A6C300BB188A /* Map */,
 				4F28C9631BF235420011AE27 /* Surprise */,
 				4F28C9601BF1EE8A0011AE27 /* Impression */,

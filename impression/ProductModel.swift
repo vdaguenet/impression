@@ -22,4 +22,8 @@ class ProductModel {
     let expressions = ProductExpressions()
     
     init() {}
+    
+    func find(id: Int64) -> SQLite.Row {
+        return Array(try DB_CONNECTION.prepare(self.table.filter(self.expressions.id == id)))[0]
+    }
 }
