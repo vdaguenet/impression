@@ -12,9 +12,9 @@ import UIKit
 class QuestionViewController: UIViewController {
    
     var selectedAnswer: String = ""
-    var answerTopStr: String = ""
-    var answerBottomStr: String = ""
     var model: QuestionModel!
+    var productIdAnswerTop: Int64!
+    var productIdAnswerBottom: Int64!
    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var answerBottom: UIImageView!
@@ -41,13 +41,13 @@ class QuestionViewController: UIViewController {
         self.answerTop.image = imageTop
         self.answerTopBlurred.image = self.blurImage(imageTop!)
         self.answerTopBlurred.alpha = 0.0
-        self.answerTopStr = question.get(self.model.expressions.firstAnswer)
+        self.productIdAnswerTop = question.get(self.model.expressions.firstProduct)
         
         let imageBottom = UIImage(named: question.get(self.model.expressions.secondProp))
         self.answerBottom.image = imageBottom
         self.answerBottomBlurred.image = self.blurImage(imageBottom!)
         self.answerBottomBlurred.alpha = 0.0
-        self.answerBottomStr = question.get(self.model.expressions.secondAnswer)
+        self.productIdAnswerBottom = question.get(self.model.expressions.secondProduct)
         
         GlobalVars.currentQuestion++;
     }
@@ -69,7 +69,7 @@ class QuestionViewController: UIViewController {
             UIView.commitAnimations()
 
             
-            GlobalVars.questionAnswers.append(self.answerTopStr)
+            GlobalVars.questionAnswerProducts.append(self.productIdAnswerTop)
         } else {
             print("answer bottom")
             
@@ -82,7 +82,7 @@ class QuestionViewController: UIViewController {
             self.answerTopBlurred.alpha = 1.0
             UIView.commitAnimations()
             
-            GlobalVars.questionAnswers.append(self.answerBottomStr)
+            GlobalVars.questionAnswerProducts.append(self.productIdAnswerBottom)
         }
        
         UIView.beginAnimations(nil, context: nil)

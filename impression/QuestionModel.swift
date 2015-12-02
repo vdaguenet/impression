@@ -14,8 +14,8 @@ struct QuestionExpressions {
     var sentence = SQLite.Expression<String>("sentence")
     var firstProp = SQLite.Expression<String>("firstProp")
     var secondProp = SQLite.Expression<String>("secondProp")
-    var firstAnswer = SQLite.Expression<String>("firstAnswer")
-    var secondAnswer = SQLite.Expression<String>("secondAnswer")
+    var firstProduct = SQLite.Expression<Int64>("firstProduct")
+    var secondProduct = SQLite.Expression<Int64>("secondProduct")
 }
 
 class QuestionModel{
@@ -26,12 +26,13 @@ class QuestionModel{
     init() {
         do {
             self.db = try Connection(GlobalVars.dbPath)
-            print("Connected to database")
-            
+            print("[Question] Connected to database")
+
             self.table = Table("question")
+
             
         } catch {
-            print("Can not connect to database")
+            print("[Question] Can not connect to database")
         }
         
     }
@@ -44,6 +45,7 @@ class QuestionModel{
     
     func getRandomQuestion() -> SQLite.Row {
         let count = try db.scalar(self.table.count)
+        
         let i = Int64(arc4random_uniform(UInt32(count)) + 1)
         
         if (GlobalVars.displayedQuestions.contains(i)) {

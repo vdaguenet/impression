@@ -16,5 +16,5 @@ struct GlobalVars {
     static var dbPath = ""
     static var currentQuestion = 0
     static var displayedQuestions: [Int64] = []
-    static var questionAnswers: [String] = []
+    static var questionAnswerProducts: [Int64] = []
 }
