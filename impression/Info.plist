@@ -26,6 +26,9 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>CrimsonText-Regular.ttf</string>
+		<string>CrimsonText-Italic.ttf</string>
+		<string>CrimsonText-Bold.ttf</string>
 		<string>Raleway-Light.ttf</string>
 		<string>Raleway-Medium.ttf</string>
 		<string>Raleway-Regular.ttf</string>
