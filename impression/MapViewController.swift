@@ -12,11 +12,33 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var storeListView: UIScrollView!
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var resetPositionBtn: UIButton!
+    @IBOutlet weak var listButton: UIButton!
     
     var locationManager = CLLocationManager()
     var userLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+    
+    override func viewWillAppear(animated: Bool) {
+        self.storeListView.alpha = 0.0
+        let nbStores = 5
+        
+        for (var i = 0; i < nbStores; i++) {
+            let y = CGFloat((190 + 12) * i)
+            self.storeListView.addSubview(StoreView(
+                frame: CGRectMake(12, y, self.storeListView.frame.width - 24, 190),
+                name: "Sephora Champs Elysées",
+                adress: "89, avenue des Champs Elysées",
+                city: "75002 Paris",
+                hours: "Du lundi au vendredi : 10:00 - 20:00",
+                distance: 123.0
+            ))
+        }
+        
+        self.storeListView.contentSize.width = self.storeListView.frame.width
+        self.storeListView.contentSize.height = CGFloat(nbStores * (190 + 12))
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -60,6 +82,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func onResetTouch(sender: AnyObject) {
         self.centerMapOnLocation(self.userLocation)
     }
+    
+    
+    @IBAction func onListButtonTouch(sender: AnyObject) {
+        self.mapView.alpha = 0.0
+        self.resetPositionBtn.alpha = 0.0
+        self.storeListView.alpha = 1.0
+    }
+    
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         

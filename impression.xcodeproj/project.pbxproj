@@ -36,6 +36,7 @@
 		4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */; };
 		4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637A1BF4A73600BB188A /* MapViewController.swift */; };
 		4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */; };
+		4FD5A4891C161D9A00ED389F /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5A4881C161D9A00ED389F /* StoreView.swift */; };
 		4FF042511C118B0500C74730 /* CrimsonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF0424A1C118B0500C74730 /* CrimsonText-Bold.ttf */; };
 		4FF042521C118B0500C74730 /* CrimsonText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF0424B1C118B0500C74730 /* CrimsonText-BoldItalic.ttf */; };
 		4FF042531C118B0500C74730 /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF0424C1C118B0500C74730 /* CrimsonText-Italic.ttf */; };
@@ -177,6 +178,7 @@
 		4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		4F93637A1BF4A73600BB188A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		4FD5A4881C161D9A00ED389F /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = vendors/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
 		4FF0424A1C118B0500C74730 /* CrimsonText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonText-Bold.ttf"; sourceTree = "<group>"; };
 		4FF0424B1C118B0500C74730 /* CrimsonText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CrimsonText-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			children = (
 				4F93637A1BF4A73600BB188A /* MapViewController.swift */,
 				4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */,
+				4FD5A4881C161D9A00ED389F /* StoreView.swift */,
 			);
 			name = Map;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				4FF2FD881C0F02B300EFB2D7 /* ProductModel.swift in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
 				4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */,
+				4FD5A4891C161D9A00ED389F /* StoreView.swift in Sources */,
 				4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
