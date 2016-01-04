@@ -22,8 +22,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var userLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     var listVisible = false
     
+    @IBAction func backFromChooseLoginView(segue: UIStoryboardSegue) {}
+    
     override func viewWillAppear(animated: Bool) {
-        self.storeListView.alpha = 0.0
+        if (self.listVisible == false) {
+            self.storeListView.alpha = 0.0
+        }
+        
         let nbStores = 5
         
         self.searchInput.addSearchIcon()
@@ -46,6 +51,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.storeListView.contentSize.width = self.storeListView.frame.width
         self.storeListView.contentSize.height = CGFloat(nbStores * (190 + 12))
     }
+    
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)

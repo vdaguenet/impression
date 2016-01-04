@@ -22,9 +22,19 @@ class ChooseLoginViewController: UIViewController {
     @IBAction func twLoginTouch(sender: AnyObject) {
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {
-                print("signed in as \(session!.userName)");
+                if let userID = Twitter.sharedInstance().sessionStore.session()!.userID {
+                    let twClient = TWTRAPIClient(userID: userID)
+                    twClient.loadUserWithID(userID) { (user, err) -> Void in
+                        if (err != nil) {
+                            print("[TW Login] Error \(err)")
+                        } else {
+                            print("[TW Login] Logged in")
+                            self.saveUser((user?.name)! as String, lastName: "", email: "")
+                        }
+                    }
+                }
             } else {
-                print("error: \(error!.localizedDescription)");
+                print("[TW Login] Error \(error!.localizedDescription)");
             }
         }
     }
