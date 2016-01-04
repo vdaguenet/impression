@@ -11,12 +11,15 @@ import UIKit
 
 class StoreView: UIView {
     var destHeight: CGFloat = 0.0
+    var parentController: UIViewController?
     
-    init(frame: CGRect, name: String, adress: String, city: String, hours: String, distance: Float) {
+    init(frame: CGRect, name: String, adress: String, city: String, hours: String, distance: Float, parentController: UIViewController) {
         super.init(frame: frame)
         
+        self.parentController = parentController
+        
         self.destHeight = frame.height
-        self.frame.size.height = CGFloat(frame.height - 100)
+        self.frame.size.height = CGFloat(frame.height)
         
         self.userInteractionEnabled = true
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onTouch"))
@@ -75,6 +78,7 @@ class StoreView: UIView {
     }
     
     func onButtonTouch() {
-        print("BTN TOUCH")
+        let loginChoiceView = self.parentController?.storyboard?.instantiateViewControllerWithIdentifier("ChooseLogin") as! ChooseLoginViewController
+        self.parentController?.navigationController?.pushViewController(loginChoiceView, animated: true)
     }
 }

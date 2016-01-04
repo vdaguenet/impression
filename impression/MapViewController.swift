@@ -16,13 +16,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var inputText: UITextField!
     @IBOutlet weak var resetPositionBtn: UIButton!
     @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var searchInput: CustomTextField!
     
     var locationManager = CLLocationManager()
     var userLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
+    var listVisible = false
+    
+    @IBAction func backFromChooseLoginView(segue: UIStoryboardSegue) {}
     
     override func viewWillAppear(animated: Bool) {
-        self.storeListView.alpha = 0.0
+        if (self.listVisible == false) {
+            self.storeListView.alpha = 0.0
+        }
+        
         let nbStores = 5
+        
+        self.searchInput.addSearchIcon()
         
         for (var i = 0; i < nbStores; i++) {
             let y = CGFloat((190 + 12) * i)
@@ -32,13 +41,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 adress: "89, avenue des Champs Elysées",
                 city: "75002 Paris",
                 hours: "Du lundi au vendredi : 10:00 - 20:00",
-                distance: 123.0
+                distance: Float32((Double(arc4random()) / 0x100000000) * (1000.0 - 10.0) + 10.0),
+                parentController: self
             ))
+            
+            self.addStorePin("Sephora Champs Elysées", baseline: "89, avenue des Champs Elysées", coord: CLLocationCoordinate2DMake(48.864716, 2.349014))
         }
         
         self.storeListView.contentSize.width = self.storeListView.frame.width
         self.storeListView.contentSize.height = CGFloat(nbStores * (190 + 12))
     }
+    
+
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -57,8 +71,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.locationManager.requestAlwaysAuthorization()
             self.locationManager.startUpdatingLocation()
         }
-        
-        self.addStorePins()
     }
     
     func checkLocationAuthorizationStatus() {
@@ -69,11 +81,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    func addStorePins() {
+    func addStorePin(name: String, baseline: String, coord: CLLocationCoordinate2D) {
         let pointAnnotation = CustomPointAnnotation()
-        pointAnnotation.coordinate = CLLocationCoordinate2DMake(48.864716, 2.349014)
-        pointAnnotation.title = "Magasin test"
-        pointAnnotation.subtitle = "Subtitle"
+        pointAnnotation.coordinate = coord
+        pointAnnotation.title = name
+        pointAnnotation.subtitle = baseline
         pointAnnotation.imageName = "pin"
         
         self.mapView.addAnnotation(pointAnnotation)
@@ -85,9 +97,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBAction func onListButtonTouch(sender: AnyObject) {
-        self.mapView.alpha = 0.0
-        self.resetPositionBtn.alpha = 0.0
-        self.storeListView.alpha = 1.0
+        if (self.listVisible == true) {
+            self.mapView.alpha = 1.0
+            self.resetPositionBtn.alpha = 1.0
+            self.storeListView.alpha = 0.0
+            self.listButton.setImage(UIImage(named: "list"), forState: UIControlState.Normal)
+            self.listVisible = false
+        } else {
+            self.mapView.alpha = 0.0
+            self.resetPositionBtn.alpha = 0.0
+            self.storeListView.alpha = 1.0
+            self.listButton.setImage(UIImage(named: "back-map"), forState: UIControlState.Normal)
+            self.listVisible = true
+        }
     }
     
     

@@ -57,7 +57,7 @@ class QuestionViewController: UIViewController {
         
         if (sender.value > 0.5) {
             dest = 1.0
-            print("answer top")
+            // answer top
             
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
@@ -71,7 +71,7 @@ class QuestionViewController: UIViewController {
             
             GlobalVars.questionAnswers.append(self.productIdAnswerTop)
         } else {
-            print("answer bottom")
+            // answer bottom
             
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
