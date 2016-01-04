@@ -31,7 +31,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let nbStores = 5
         
-        self.searchInput.addSearchIcon()
+//        self.searchInput.addSearchIcon()
         
         for (var i = 0; i < nbStores; i++) {
             let y = CGFloat((190 + 12) * i)

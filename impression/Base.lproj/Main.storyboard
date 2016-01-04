@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
-
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -277,6 +276,10 @@ vos émotions, chaque jour.</string>
                                             <action selector="onListButtonTouch:" destination="8GH-I3-eJQ" eventType="touchDown" id="PhS-G8-ldi"/>
                                         </connections>
                                     </button>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jOx-UD-IRQ">
+                                        <rect key="frame" x="0.0" y="59" width="320" height="446"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </scrollView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO">
                                         <rect key="frame" x="65" y="8" width="242" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -284,10 +287,6 @@ vos émotions, chaque jour.</string>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="jOx-UD-IRQ">
-                                        <rect key="frame" x="0.0" y="59" width="320" height="446"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </scrollView>
                                 </subviews>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7RG-ih-UNI">
@@ -356,7 +355,7 @@ vos émotions, chaque jour.</string>
                                 <string key="text">Veuillez vous connecter pour
 passer à l’étape suivante :</string>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nx6-cF-nVa">
@@ -478,7 +477,6 @@ passer à l’étape suivante :</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="moc-oz-CRx">
-
                                 <rect key="frame" x="33" y="422" width="238" height="66"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <string key="text">Sisley vous offre trois échantillons des produits vous correspondant aujourd’hui, accompagné de votre superbe Impression au format A5 !</string>

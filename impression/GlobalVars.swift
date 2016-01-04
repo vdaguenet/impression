@@ -12,7 +12,7 @@ import SQLite
 struct GlobalVars {
     // Constants
     static let DB_NAME = "impression.sqlite3"
-    static let NB_QUESTION: Int = 3
+    static let NB_QUESTION: Int = 9
     // Vars
     static var dbPath = ""
     static var currentQuestion = 0
