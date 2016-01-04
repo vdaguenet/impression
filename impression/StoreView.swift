@@ -8,9 +8,18 @@
 
 import UIKit
 
-class StoreView: UIView {    
+
+class StoreView: UIView {
+    var destHeight: CGFloat = 0.0
+    
     init(frame: CGRect, name: String, adress: String, city: String, hours: String, distance: Float) {
         super.init(frame: frame)
+        
+        self.destHeight = frame.height
+        self.frame.size.height = CGFloat(frame.height - 100)
+        
+        self.userInteractionEnabled = true
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onTouch"))
         
         let nameLabel = UILabel(frame: CGRectMake(20, 16, frame.width - 20, 30))
         nameLabel.font = UIFont(name: "CrimsonText-Bold", size: 16.0)
@@ -33,6 +42,8 @@ class StoreView: UIView {
         btn.setTitle("C H O I S I R  C E  M A G A S I N", forState: UIControlState.Normal)
         btn.titleLabel?.font = UIFont(name: "Raleway-Medium", size: 12.0)
         btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
+        btn.userInteractionEnabled = true
+        btn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onButtonTouch"))
         
         let pin = UIImageView(image: UIImage(named: "pin"))
         pin.frame = CGRectMake(frame.width - 50, 21, 28, 28)
@@ -43,6 +54,7 @@ class StoreView: UIView {
         distanceLabel.text = String(distance) + " m"
         distanceLabel.font = UIFont(name: "Raleway-Medium", size: 10.0)
         
+
         
         self.backgroundColor = UIColor.whiteColor()
         self.addSubview(nameLabel)
@@ -56,5 +68,13 @@ class StoreView: UIView {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func onTouch() {
+        print("TOUCH")
+    }
+    
+    func onButtonTouch() {
+        print("BTN TOUCH")
     }
 }
