@@ -79,6 +79,7 @@ class ImpressionViewController: UIViewController {
                 animationDepthIn(self.firstImage, image1Blur: self.firstBlurImage, image2: self.secondImage );
             }else if(self.layerCount == 2){
                 animationDepthIn(self.secondImage, image1Blur:self.secondBlurImage, image2: self.thirdImage );
+                
             }
             print(self.layerCount)
             
