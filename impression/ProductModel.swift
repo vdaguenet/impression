@@ -14,6 +14,10 @@ struct ProductExpressions {
     var name = SQLite.Expression<String>("name")
     var description = SQLite.Expression<String>("description")
     var image = SQLite.Expression<String>("image")
+    var citation = SQLite.Expression<String>("citation")
+    var auteurCitation = SQLite.Expression<String>("auteurCitation")
+    var imageCitation = SQLite.Expression<String>("imageCitation")
+    
 }
 
 class ProductModel {
