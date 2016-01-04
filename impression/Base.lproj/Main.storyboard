@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
@@ -269,6 +269,7 @@ vos émotions, chaque jour.</string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ZM2-nb-lja">
                                         <rect key="frame" x="12" y="8" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="list">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -280,7 +281,7 @@ vos émotions, chaque jour.</string>
                                         <rect key="frame" x="0.0" y="59" width="320" height="446"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </scrollView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO" customClass="CustomTextField" customModule="impression" customModuleProvider="target">
                                         <rect key="frame" x="65" y="8" width="242" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -309,12 +310,11 @@ vos émotions, chaque jour.</string>
                     </view>
                     <navigationItem key="navigationItem" id="oga-cw-Mp8"/>
                     <connections>
-                        <outlet property="inputText" destination="Uae-F1-QZO" id="nTA-3M-PJZ"/>
-                        <outlet property="listButton" destination="ZM2-nb-lja" id="nPz-UC-Pc0"/>
-                        <outlet property="mapView" destination="BDF-wW-HW6" id="sLR-o2-4Dr"/>
-                        <outlet property="resetPositionBtn" destination="I61-U5-DM6" id="GAI-Ds-Br6"/>
-                        <outlet property="searchInput" destination="Uae-F1-QZO" id="CGg-hI-Oxj"/>
-                        <outlet property="storeListView" destination="jOx-UD-IRQ" id="zmJ-0m-uuK"/>
+                        <outlet property="listButton" destination="ZM2-nb-lja" id="fm6-QM-z4a"/>
+                        <outlet property="mapView" destination="BDF-wW-HW6" id="8Nf-pe-uIg"/>
+                        <outlet property="resetPositionBtn" destination="I61-U5-DM6" id="HRJ-JJ-fag"/>
+                        <outlet property="ssss" destination="Uae-F1-QZO" id="faI-bO-JfC"/>
+                        <outlet property="storeListView" destination="jOx-UD-IRQ" id="nih-IB-q2u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sBV-YG-PTI" userLabel="First Responder" sceneMemberID="firstResponder"/>

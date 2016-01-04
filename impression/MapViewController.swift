@@ -13,10 +13,9 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var storeListView: UIScrollView!
-    @IBOutlet weak var inputText: UITextField!
+    @IBOutlet weak var ssss: CustomTextField! // sorry for the name but after 3h around a bug, only this name worked
     @IBOutlet weak var resetPositionBtn: UIButton!
     @IBOutlet weak var listButton: UIButton!
-    @IBOutlet weak var searchInput: CustomTextField!
     
     var locationManager = CLLocationManager()
     var userLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
@@ -31,7 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let nbStores = 5
         
-//        self.searchInput.addSearchIcon()
+        self.ssss.addSearchIcon()
         
         for (var i = 0; i < nbStores; i++) {
             let y = CGFloat((190 + 12) * i)
