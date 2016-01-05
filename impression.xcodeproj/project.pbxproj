@@ -25,6 +25,7 @@
 		4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28C9641BF235590011AE27 /* SurpriseViewController.swift */; };
 		4F501AED1C3BB6C3002C59E0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F501AEC1C3BB6C3002C59E0 /* RegisterViewController.swift */; };
 		4F501AF61C3BBB23002C59E0 /* RegisterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F501AF51C3BBB23002C59E0 /* RegisterTextField.swift */; };
+		4F501AF81C3BD4EE002C59E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F501AF71C3BD4EE002C59E0 /* LoginViewController.swift */; };
 		4F60E0261BEB608E003523DF /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE2EB5C1BEB5587001EFB7C /* SQLite.framework */; };
 		4F60E0271BEB608E003523DF /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE2EB5C1BEB5587001EFB7C /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F73360C1BF09E3D009C160C /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F7335F91BF09E3D009C160C /* Raleway-Black.ttf */; };
@@ -181,6 +182,7 @@
 		4F28C9641BF235590011AE27 /* SurpriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurpriseViewController.swift; sourceTree = "<group>"; };
 		4F501AEC1C3BB6C3002C59E0 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4F501AF51C3BBB23002C59E0 /* RegisterTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterTextField.swift; sourceTree = "<group>"; };
+		4F501AF71C3BD4EE002C59E0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		4F60E0221BEB6055003523DF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		4F60E0241BEB6065003523DF /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		4F7335F91BF09E3D009C160C /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				4F1B71D11C3A88810048CED5 /* ChooseLoginViewController.swift */,
 				4F501AEC1C3BB6C3002C59E0 /* RegisterViewController.swift */,
+				4F501AF71C3BD4EE002C59E0 /* LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
 				4FF2FD881C0F02B300EFB2D7 /* ProductModel.swift in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
+				4F501AF81C3BD4EE002C59E0 /* LoginViewController.swift in Sources */,
 				4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */,
 				4FD5A4891C161D9A00ED389F /* StoreView.swift in Sources */,
 				4FF7CE5F1BE779DC0043FD5D /* AppDelegate.swift in Sources */,

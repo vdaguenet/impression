@@ -15,14 +15,27 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var firstnameField: UITextField!
+    @IBOutlet weak var popin: UIVisualEffectView!
+    @IBOutlet weak var popinView: UIView!
+    @IBOutlet weak var popinTitle: UILabel!
+    @IBOutlet weak var popinText: UILabel!
+    @IBOutlet weak var popinBtn: UIButton!
     
     var keyboardHeight: CGFloat!
     var keyboardVisible: Bool = false
     var needAnimation: Bool = false
+    var hasError: Bool = false
     
     override func viewWillAppear(animated:Bool) {
         super.viewWillAppear(animated)
         
+        // Add shadow to popin
+        self.popinView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.popinView.layer.shadowOffset = CGSize(width: 0, height: 5)
+        self.popinView.layer.shadowOpacity = 0.2
+        self.popinView.layer.shadowRadius = 10
+        
+        // Add events for keyboard
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
@@ -42,7 +55,24 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func onFormSubmit(sender: AnyObject) {
-        print("GO")
+        let err = self.checkForm()
+       
+        if (err != "") {
+            self.hasError = true
+            self.popinBtn.setTitle("R É E S S A Y E R", forState: UIControlState.Normal)
+            self.setPopupText("Erreur !", text: err)
+        } else {
+            self.hasError = false
+            self.popinBtn.setTitle("O K", forState: UIControlState.Normal)
+            self.setPopupText("Félicitations !", text: "Votre compte Sisley a bien été créé, bienvenue \(self.firstnameField.text! as String).")
+        }
+        
+    }
+    
+    @IBAction func closePopin(sender: AnyObject) {
+        if (self.hasError == true) {
+            self.popin.hidden = true
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -82,5 +112,31 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectOffset(self.view.frame, 0, movement)
         })
+    }
+    
+    private func checkForm() -> String {
+        if (self.firstnameField.text! as String == "") {
+            return "Vous devez indiquer votre prénom."
+        }
+        if (self.nameField.text! as String == "") {
+            return "Vous devez indiquer votre nom de famille."
+        }
+        if (self.emailField.text! as String == "") {
+            return "Vous devez indiquer votre e-mail."
+        }
+        if (self.birthdayField.text! as String == "") {
+            return "Vous devez indiquer votre date de naissance."
+        }
+        if (self.passwordField.text! as String == "") {
+            return "Vous devez indiquer votre mot de passe."
+        }
+        
+        return ""
+    }
+    
+    private func setPopupText(title: String, text: String) {
+        self.popinTitle.text = title
+        self.popinText.text = text
+        self.popin.hidden = false
     }
 }
