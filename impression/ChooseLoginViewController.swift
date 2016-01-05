@@ -19,6 +19,8 @@ class ChooseLoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func backFromRegisterView(segue: UIStoryboardSegue) {}
+
     @IBAction func twLoginTouch(sender: AnyObject) {
         Twitter.sharedInstance().logInWithCompletion { session, error in
             if (session != nil) {

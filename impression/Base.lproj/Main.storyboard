@@ -11,6 +11,11 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Medium.ttf">
             <string>Raleway-Medium</string>
@@ -20,8 +25,11 @@
             <string>Raleway-Medium</string>
             <string>Raleway-Medium</string>
             <string>Raleway-Medium</string>
+            <string>Raleway-Medium</string>
+            <string>Raleway-Medium</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
             <string>Raleway-Regular</string>
@@ -349,15 +357,6 @@ vos émotions, chaque jour.</string>
                                 <rect key="frame" x="12" y="28" width="9" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tny-iJ-0l1">
-                                <rect key="frame" x="42" y="110" width="236" height="53"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <string key="text">Veuillez vous connecter pour
-passer à l’étape suivante :</string>
-                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nx6-cF-nVa">
                                 <rect key="frame" x="20" y="199" width="280" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -387,6 +386,9 @@ passer à l’étape suivante :</string>
                                 <state key="normal" title="C R É E R  U N  C O M P T E" backgroundImage="button-background">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="D6i-QB-RZj" kind="modal" id="RmP-4P-LIQ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qXQ-HE-0jq">
                                 <rect key="frame" x="42" y="494" width="236" height="30"/>
@@ -396,6 +398,15 @@ passer à l’étape suivante :</string>
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tny-iJ-0l1">
+                                <rect key="frame" x="33" y="110" width="236" height="53"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <string key="text">Veuillez vous connecter pour
+passer à l’étape suivante :</string>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -405,8 +416,146 @@ passer à l’étape suivante :</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAw-RV-wKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rbS-4Z-MFv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="38" y="2061"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="WMV-Lc-PhQ">
+            <objects>
+                <viewController id="D6i-QB-RZj" customClass="RegisterViewController" customModule="impression" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cri-U1-a0s">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register-background" id="gdZ-j8-ABb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8wi-XZ-yL6">
+                                <rect key="frame" x="33" y="20" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="13"/>
+                                <state key="normal" title="R E T O U R">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rbS-4Z-MFv" kind="unwind" unwindAction="backFromRegisterView:" id="7o1-oO-SAi"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-left" id="Uqg-z4-q8l">
+                                <rect key="frame" x="12" y="28" width="9" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5wJ-1c-pqO">
+                                <rect key="frame" x="81" y="482" width="159" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="14"/>
+                                <state key="normal" title="V A L I D E R" backgroundImage="button-background">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onFormSubmit:" destination="D6i-QB-RZj" eventType="touchDown" id="dA7-lZ-ObT"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="vJY-qf-95p" customClass="RegisterTextField" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="33" y="158" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Votre prénom" textAlignment="natural" minimumFontSize="17" id="Dgs-pS-X7h">
+                                        <rect key="frame" x="0.0" y="8" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onFieldTouch:" destination="D6i-QB-RZj" eventType="editingDidBegin" id="Qgy-a0-7S4"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="1IU-np-ruX" customClass="RegisterTextField" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="33" y="210" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Votre nom" textAlignment="natural" minimumFontSize="17" id="nAV-5g-gXx">
+                                        <rect key="frame" x="0.0" y="8" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onFieldTouch:" destination="D6i-QB-RZj" eventType="editingDidBegin" id="88a-4O-5E0"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="XuR-Y3-zpX" customClass="RegisterTextField" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="33" y="262" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Votre email" textAlignment="natural" minimumFontSize="17" id="8Zy-t4-hVg">
+                                        <rect key="frame" x="0.0" y="8" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onFieldTouch:" destination="D6i-QB-RZj" eventType="editingDidBegin" id="Stk-vR-L1Z"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="k0r-y0-rVl" customClass="RegisterTextField" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="33" y="314" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Votre date de naissance" textAlignment="natural" minimumFontSize="17" id="J5b-Bj-N5J">
+                                        <rect key="frame" x="0.0" y="8" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onFieldTouch:" destination="D6i-QB-RZj" eventType="editingDidBegin" id="yJt-sd-piY"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <view contentMode="scaleToFill" id="8Mf-Wo-HOj" customClass="RegisterTextField" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="33" y="366" width="253" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Votre motde passe" textAlignment="natural" minimumFontSize="17" id="duB-tM-VkM">
+                                        <rect key="frame" x="0.0" y="8" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="onFieldTouch:" destination="D6i-QB-RZj" eventType="editingDidBegin" id="uaC-oT-VtW"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jxI-gV-pmx">
+                                <rect key="frame" x="33" y="91" width="261" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Veuillez renseigner les champs suivants :</string>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rc2-fr-QVq"/>
+                    <connections>
+                        <outlet property="birthdayField" destination="J5b-Bj-N5J" id="taq-HQ-2lv"/>
+                        <outlet property="emailField" destination="8Zy-t4-hVg" id="OF4-aV-tnK"/>
+                        <outlet property="firstnameField" destination="Dgs-pS-X7h" id="YPM-Zk-wLW"/>
+                        <outlet property="nameField" destination="nAV-5g-gXx" id="uuh-ij-DK2"/>
+                        <outlet property="passwordField" destination="duB-tM-VkM" id="wDP-jF-bqm"/>
+                        <outlet property="submitButton" destination="5wJ-1c-pqO" id="j7l-Ov-YJ4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wV3-0a-H0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="2061"/>
         </scene>
         <!--Surprise View Controller-->
         <scene sceneID="wJa-TA-XKk">
@@ -540,6 +689,7 @@ passer à l’étape suivante :</string>
         <image name="placeholder" width="1280" height="800"/>
         <image name="prendre-soin" width="496" height="167"/>
         <image name="question-background" width="750" height="1334"/>
+        <image name="register-background" width="375" height="667"/>
         <image name="sight" width="40" height="40"/>
         <image name="sortir-amis" width="496" height="167"/>
     </resources>
