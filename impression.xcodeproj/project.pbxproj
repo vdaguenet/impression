@@ -51,6 +51,7 @@
 		4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */; };
 		4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637A1BF4A73600BB188A /* MapViewController.swift */; };
 		4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */; };
+		4FAE19281C3C1E27009478BC /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE19271C3C1E27009478BC /* StoreModel.swift */; };
 		4FCB733A1C3A68AB00C2FA22 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */; };
 		4FD5A4891C161D9A00ED389F /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5A4881C161D9A00ED389F /* StoreView.swift */; };
 		4FF042511C118B0500C74730 /* CrimsonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF0424A1C118B0500C74730 /* CrimsonText-Bold.ttf */; };
@@ -209,6 +210,7 @@
 		4F8F9C6B1BE8CB5500648732 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		4F93637A1BF4A73600BB188A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		4FAE19271C3C1E27009478BC /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4FD5A4881C161D9A00ED389F /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
 		4FE2EB4F1BEB5587001EFB7C /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = vendors/SQLite/SQLite.xcodeproj; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		4F1B71CE1C3A85F90048CED5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4FAE19271C3C1E27009478BC /* StoreModel.swift */,
 				4F10E88A1BEA158A004EED39 /* QuestionModel.swift */,
 				4FF2FD871C0F02B300EFB2D7 /* ProductModel.swift */,
 			);
@@ -729,6 +732,7 @@
 				3C48ABCB1C3BCD9800C792B6 /* pushButton.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
 				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
+				4FAE19281C3C1E27009478BC /* StoreModel.swift in Sources */,
 				4FF2FD881C0F02B300EFB2D7 /* ProductModel.swift in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
 				4FF7CE611BE779DC0043FD5D /* IntroViewController.swift in Sources */,
