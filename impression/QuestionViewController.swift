@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     var productIdAnswerTop: Int64!
     var productIdAnswerBottom: Int64!
    
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var answerBottom: UIImageView!
     @IBOutlet weak var answerTop: UIImageView!
@@ -32,10 +33,12 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         self.model = QuestionModel()
         let question = self.model.getRandomQuestion()
-        self.label.text = question.get(self.model.expressions.sentence).capitalizedString
+        self.label.text = question.get(self.model.expressions.sentence)
+        
+        self.backgroundImage.image = UIImage(named: question.get(self.model.expressions.background))
         
         let imageTop = UIImage(named: question.get(self.model.expressions.firstProp))
         self.answerTop.image = imageTop
@@ -50,6 +53,7 @@ class QuestionViewController: UIViewController {
         self.productIdAnswerBottom = question.get(self.model.expressions.secondProduct)
         
         GlobalVars.currentQuestion++;
+
     }
     
     @IBAction func onSlideEnd(sender: UISlider) {
