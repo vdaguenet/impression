@@ -16,6 +16,7 @@ struct QuestionExpressions {
     var secondProp = SQLite.Expression<String>("secondProp")
     var firstProduct = SQLite.Expression<Int64>("firstProduct")
     var secondProduct = SQLite.Expression<Int64>("secondProduct")
+    var background = SQLite.Expression<String>("background")
 }
 
 class QuestionModel{
