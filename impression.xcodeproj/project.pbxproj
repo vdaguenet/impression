@@ -20,6 +20,7 @@
 		4F1B71E21C3AB86F0048CED5 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1B71DE1C3AB86F0048CED5 /* TwitterKit.framework */; };
 		4F1B71E31C3AB86F0048CED5 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4F1B71DF1C3AB86F0048CED5 /* TwitterKitResources.bundle */; };
 		4F1B71E41C3AB86F0048CED5 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1B71E01C3AB86F0048CED5 /* TwitterCore.framework */; };
+		4F266DDA1C3C166100D9B1A8 /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F266DD91C3C166100D9B1A8 /* StoreModel.swift */; };
 		4F28C9581BF1EBAA0011AE27 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28C9571BF1EBAA0011AE27 /* GlobalVars.swift */; };
 		4F28C9621BF1EEE40011AE27 /* ImpressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28C9611BF1EEE40011AE27 /* ImpressionViewController.swift */; };
 		4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F28C9641BF235590011AE27 /* SurpriseViewController.swift */; };
@@ -177,6 +178,7 @@
 		4F1B71DE1C3AB86F0048CED5 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		4F1B71DF1C3AB86F0048CED5 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		4F1B71E01C3AB86F0048CED5 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		4F266DD91C3C166100D9B1A8 /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		4F28C9571BF1EBAA0011AE27 /* GlobalVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
 		4F28C9611BF1EEE40011AE27 /* ImpressionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImpressionViewController.swift; sourceTree = "<group>"; };
 		4F28C9641BF235590011AE27 /* SurpriseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurpriseViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				4F10E88A1BEA158A004EED39 /* QuestionModel.swift */,
 				4FF2FD871C0F02B300EFB2D7 /* ProductModel.swift */,
+				4F266DD91C3C166100D9B1A8 /* StoreModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -724,6 +727,7 @@
 				4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
 				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
+				4F266DDA1C3C166100D9B1A8 /* StoreModel.swift in Sources */,
 				4FF2FD881C0F02B300EFB2D7 /* ProductModel.swift in Sources */,
 				4F8F9C6C1BE8CB5500648732 /* QuestionViewController.swift in Sources */,
 				4F501AF81C3BD4EE002C59E0 /* LoginViewController.swift in Sources */,
