@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C48ABCB1C3BCD9800C792B6 /* pushButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C48ABCA1C3BCD9800C792B6 /* pushButton.swift */; };
+		3CD85E9D1C3C191700FD75B2 /* TopAlignedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CD85E9C1C3C191700FD75B2 /* TopAlignedLabel.swift */; };
 		4F10E88B1BEA158A004EED39 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F10E88A1BEA158A004EED39 /* QuestionModel.swift */; };
 		4F15E4B21BF09D00004CF144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F15E4B11BF09D00004CF144 /* Assets.xcassets */; };
 		4F1B71D21C3A88810048CED5 /* ChooseLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B71D11C3A88810048CED5 /* ChooseLoginViewController.swift */; };
@@ -166,6 +168,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3C48ABCA1C3BCD9800C792B6 /* pushButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pushButton.swift; sourceTree = "<group>"; };
+		3CD85E9C1C3C191700FD75B2 /* TopAlignedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopAlignedLabel.swift; sourceTree = "<group>"; };
 		4F10E88A1BEA158A004EED39 /* QuestionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		4F15E4B11BF09D00004CF144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F1B71D11C3A88810048CED5 /* ChooseLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLoginViewController.swift; sourceTree = "<group>"; };
@@ -283,9 +287,11 @@
 		4F1B71CF1C3A860E0048CED5 /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				3C48ABCA1C3BCD9800C792B6 /* pushButton.swift */,
 				4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */,
 				4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */,
 				4F501AF51C3BBB23002C59E0 /* RegisterTextField.swift */,
+				3CD85E9C1C3C191700FD75B2 /* TopAlignedLabel.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -717,8 +723,10 @@
 				4F10E88B1BEA158A004EED39 /* QuestionModel.swift in Sources */,
 				4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */,
 				4F1B71D21C3A88810048CED5 /* ChooseLoginViewController.swift in Sources */,
+				3CD85E9D1C3C191700FD75B2 /* TopAlignedLabel.swift in Sources */,
 				4F501AED1C3BB6C3002C59E0 /* RegisterViewController.swift in Sources */,
 				4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */,
+				3C48ABCB1C3BCD9800C792B6 /* pushButton.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
 				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
 				4FF2FD881C0F02B300EFB2D7 /* ProductModel.swift in Sources */,

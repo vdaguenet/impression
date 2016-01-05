@@ -27,13 +27,18 @@ class ImpressionViewController: UIViewController {
     @IBOutlet weak var auteur: UILabel!
     @IBOutlet weak var produit: UILabel!
     @IBOutlet weak var descript: UILabel!
-
+    @IBOutlet weak var bouton12: pushButton!
+    @IBOutlet weak var boutton11: pushButton!
+    @IBOutlet weak var boutton13: pushButton!
     @IBOutlet weak var surprise: UIButton!
+    @IBOutlet weak var cross: UIButton!
+    @IBOutlet weak var labelDescript: UILabel!
     
     var layerCount: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.getProductsFromQuestions()
         
         let longTouch: UILongPressGestureRecognizer = UILongPressGestureRecognizer (target: self, action: "longTouch:")
@@ -44,10 +49,12 @@ class ImpressionViewController: UIViewController {
         
         self.layerCount = 0;
         self.surprise.hidden = true;
-        
+        self.cross.hidden = true;
+       
+       
         /* Text INIT  */
-       /* self.citation.hidden = true
-        self.auteur.hidden = true*/
+        self.citation.hidden = true
+        self.auteur.hidden = true
         self.descript.hidden = true
         self.produit.hidden = true
         
@@ -58,9 +65,8 @@ class ImpressionViewController: UIViewController {
         
         /* IMAGE init */
         
+        
         self.firstImage.image = UIImage(named :"impression_1_1.png");
-        
-        
         self.secondImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.imageCitation ));
         self.thirdImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.image ));
         
@@ -71,13 +77,26 @@ class ImpressionViewController: UIViewController {
        
     }
     
+    @IBAction func buttonPressed(sender: AnyObject) {
+        print("crossPress")
+        UIButton.animateWithDuration(0.4, delay: 0.0,options: [ .Autoreverse], animations: {
+            self.cross.alpha = 0.5
+            self.cross.transform = CGAffineTransformMakeScale(0.8, 0.8)
+            }, completion: nil)
+        if(self.layerCount>0){
+            self.layerCount - 1 ;
+        }
+    }
+    
     func longTouch( longTouch : UIGestureRecognizer){
         if(longTouch.state == UIGestureRecognizerState.Began){
             print("view Began")
             if(self.layerCount == 0){
                 touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
+                self.cross.hidden = false ;
             }else if(self.layerCount == 1){
                 touchBlur(self.secondImage, image1Blur: self.secondBlurImage);
+                
                 
             }
             
@@ -87,6 +106,12 @@ class ImpressionViewController: UIViewController {
             if(self.layerCount == 1){
                 animationDepthIn(self.firstImage, image1Blur: self.firstBlurImage, image2: self.secondImage );
                 textIn(self.citation , text2: self.auteur );
+                
+                self.boutton11.hidden = true
+                self.bouton12.hidden = true
+                self.boutton13.hidden = true
+                
+                
             }else if(self.layerCount == 2){
                 textOut(self.citation , text2: self.auteur );
                 animationDepthIn(self.secondImage, image1Blur:self.secondBlurImage, image2: self.thirdImage );
@@ -98,9 +123,11 @@ class ImpressionViewController: UIViewController {
         }
         
     }
+    
+    
     func touchBlur(image1 : UIImageView , image1Blur: UIImageView){
-        
         UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDelay(0.6)
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
         UIView.setAnimationDuration(0.4)
         image1Blur.alpha = 0.2
@@ -113,8 +140,7 @@ class ImpressionViewController: UIViewController {
         image2.hidden = false
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
-        UIView.setAnimationDuration(0.6)
-        //self.firstImage.image?.setValue(3.0, forKey: "scale")
+        UIView.setAnimationDuration(0.8)
         image1 .transform = CGAffineTransformMakeScale(4.0 , 4.0)
         image1 .alpha = 0.0
         image1Blur.transform  = CGAffineTransformMakeScale(4.0 , 4.0)

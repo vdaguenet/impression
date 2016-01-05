@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kvD-lv-0Gc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="CrimsonText-Bold.ttf">
+            <string>CrimsonText-Bold</string>
+            <string>CrimsonText-Bold</string>
+        </mutableArray>
         <mutableArray key="CrimsonText-Semibold.ttf">
             <string>CrimsonText-Semibold</string>
         </mutableArray>
         <mutableArray key="Raleway-Light.ttf">
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
@@ -187,38 +193,61 @@ vos émotions, chaque jour.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O99-ES-1kO" userLabel="citation">
-                                <rect key="frame" x="74" y="313" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O99-ES-1kO" userLabel="citation">
+                                <rect key="frame" x="41" y="328" width="239" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zIW-Hl-MiD" userLabel="auteurCitation">
-                                <rect key="frame" x="74" y="313" width="194" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zIW-Hl-MiD" userLabel="auteurCitation">
+                                <rect key="frame" x="108" y="440" width="171" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GPI-64-deV" userLabel="produit">
-                                <rect key="frame" x="74" y="342" width="194" height="149"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GPI-64-deV" userLabel="produit">
+                                <rect key="frame" x="42" y="281" width="238" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BBZ-NA-P1O" userLabel="description">
-                                <rect key="frame" x="226" y="412" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description du produit esfsffsefsefsef kz,dcmld, zqldij qjiqozjd ij" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BBZ-NA-P1O" userLabel="description" customClass="TopAlignedLabel" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="42" y="344" width="238" height="114"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7cH-2d-9Gl" customClass="pushButton" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="235" y="387" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="xQK-Ga-n0I" customClass="pushButton" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="29" y="275" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EmU-Qf-bJ7" customClass="pushButton" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="191" y="73" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HOu-hN-XkS" userLabel="cross">
+                                <rect key="frame" x="8" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="cross"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="yk3-DW-JsK" eventType="touchUpInside" id="eF4-Q7-3Dg"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L3R-SZ-cJc">
-                                <rect key="frame" x="127" y="499" width="66" height="30"/>
+                                <rect key="frame" x="111" y="500" width="100" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Surprise !"/>
+                                <state key="normal" title="SURPRISE !"/>
                                 <connections>
                                     <segue destination="sn7-4X-8fh" kind="push" id="9e2-LU-FNa"/>
                                 </connections>
@@ -229,10 +258,15 @@ vos émotions, chaque jour.</string>
                     <navigationItem key="navigationItem" id="sGU-cw-G0q"/>
                     <connections>
                         <outlet property="auteur" destination="zIW-Hl-MiD" id="SNE-xU-z2P"/>
+                        <outlet property="bouton12" destination="7cH-2d-9Gl" id="cxd-Wd-rZD"/>
+                        <outlet property="boutton11" destination="xQK-Ga-n0I" id="igA-HR-V3W"/>
+                        <outlet property="boutton13" destination="EmU-Qf-bJ7" id="ngX-QH-KBJ"/>
                         <outlet property="citation" destination="O99-ES-1kO" id="3se-bs-fjO"/>
+                        <outlet property="cross" destination="HOu-hN-XkS" id="nVb-AR-19J"/>
                         <outlet property="descript" destination="BBZ-NA-P1O" id="mUo-kq-buN"/>
                         <outlet property="firstBlurImage" destination="NCt-2I-IDw" id="lbe-V2-DcK"/>
                         <outlet property="firstImage" destination="ENQ-v1-CeI" id="cmD-3l-HzX"/>
+                        <outlet property="labelDescript" destination="BBZ-NA-P1O" id="LDE-Df-c5A"/>
                         <outlet property="produit" destination="GPI-64-deV" id="WvK-Vh-1Ks"/>
                         <outlet property="secondBlurImage" destination="BmM-IP-uy4" id="mem-Zx-ESW"/>
                         <outlet property="secondImage" destination="c68-7m-jaA" id="kAF-fg-VxB"/>
@@ -536,7 +570,8 @@ passer à l’étape suivante :</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jxI-gV-pmx">
                                 <rect key="frame" x="33" y="91" width="261" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Veuillez renseigner les champs suivants :</string>
+                                <string key="text">Veuillez renseigner les 
+champs suivants :</string>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -680,6 +715,7 @@ passer à l’étape suivante :</string>
         <image name="button-background" width="619" height="117"/>
         <image name="by-sisley" width="292" height="73"/>
         <image name="choose-background" width="375" height="667"/>
+        <image name="cross" width="646" height="627"/>
         <image name="general-background" width="375" height="667"/>
         <image name="impression" width="325" height="53"/>
         <image name="impression_1_1" width="1124" height="2000"/>
