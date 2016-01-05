@@ -35,7 +35,7 @@ class QuestionViewController: UIViewController {
                 
         self.model = QuestionModel()
         let question = self.model.getRandomQuestion()
-        self.label.text = question.get(self.model.expressions.sentence).capitalizedString
+        self.label.text = question.get(self.model.expressions.sentence)
         
         let imageTop = UIImage(named: question.get(self.model.expressions.firstProp))
         self.answerTop.image = imageTop
