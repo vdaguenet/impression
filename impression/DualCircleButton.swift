@@ -47,4 +47,15 @@ class DualCircleButton: UIButton {
         self.addSubview(BigCirle(frame: rect))
         self.addSubview(SmallCirle(frame: CGRectInset(rect, rect.width * 0.25, rect.height * 0.25)))
     }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        UIView.animateWithDuration(0.4, delay: 0.0, options: [.AllowUserInteraction, .Autoreverse ], animations: {
+            self.alpha = 0.5
+            }, completion: nil)
+    }
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        UIView.animateWithDuration(0.4, delay: 0.0, options: [.AllowUserInteraction, .Autoreverse  ], animations: {
+            self.alpha = 1.0
+            }, completion: nil)
+    }
+    
 }

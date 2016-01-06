@@ -1,4 +1,4 @@
-//
+ //
 //  ImpressionViewController.swift
 //  impression
 //
@@ -27,14 +27,15 @@ class ImpressionViewController: UIViewController {
     @IBOutlet weak var auteur: UILabel!
     @IBOutlet weak var produit: UILabel!
     @IBOutlet weak var descript: UILabel!
-    @IBOutlet weak var bouton12: pushButton!
-    @IBOutlet weak var boutton11: pushButton!
-    @IBOutlet weak var Boutton21: pushButton!
-    @IBOutlet weak var boutton13: pushButton!
+    @IBOutlet weak var bouton12: DualCircleButton!
+    @IBOutlet weak var boutton11: DualCircleButton!
+    @IBOutlet weak var Boutton21: DualCircleButton!
+    @IBOutlet weak var boutton13: DualCircleButton!
     @IBOutlet weak var surprise: UIButton!
     @IBOutlet weak var cross: UIButton!
     @IBOutlet weak var labelDescript: UILabel!
-    
+    var  products = [Int64: Int]()
+    var myArray1 : [Int] = []
     var layerCount: Int!
     
     override func viewDidLoad() {
@@ -79,8 +80,25 @@ class ImpressionViewController: UIViewController {
        
     }
     
+    @IBAction func setImage(sender: UIButton) {
+        print("Swag Button")
+        let buttonId = Int(sender.accessibilityIdentifier!)
+         print(buttonId )
+        self.citation.text  = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.citation);
+        self.auteur.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.auteurCitation);
+        self.descript.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.description);
+        self.produit.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.name);
+        self.firstImage.image = UIImage(named :"impression_1_1.png");
+        self.secondImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.imageCitation ));
+        self.thirdImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.image ));
+        
+        self.firstBlurImage.image = self.blurImage(15.0, image : self.firstImage.image! );
+        self.secondBlurImage.image = self.blurImage(15.0, image : self.secondImage.image! );
+        
+        self.firstImage.transform = CGAffineTransformMakeScale(1.4, 1.4)
+    }
+    
     @IBAction func buttonPressed(sender: AnyObject) {
-        print("crossPress")
         UIButton.animateWithDuration(0.4, delay: 0.0,options: [ .Autoreverse], animations: {
             self.cross.alpha = 0.5
             self.cross.transform = CGAffineTransformMakeScale(0.8, 0.8)
@@ -103,13 +121,11 @@ class ImpressionViewController: UIViewController {
                 self.surprise.hidden = true
             }
             self.layerCount  = self.layerCount - 1 ;
-            print(self.layerCount)
         }
     }
     
     func longTouch( longTouch : UIGestureRecognizer){
         if(longTouch.state == UIGestureRecognizerState.Began){
-            print("view Began")
             if(self.layerCount == 0){
                 touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
                 self.cross.hidden = false ;
@@ -120,7 +136,6 @@ class ImpressionViewController: UIViewController {
             }
             
         }else if(longTouch.state == UIGestureRecognizerState.Ended) {
-            print("view Ended")
             self.layerCount = self.layerCount +  1 ;
             if(self.layerCount == 1){
                 animationDepthIn(self.firstImage, image1Blur: self.firstBlurImage, image2: self.secondImage );
@@ -242,6 +257,7 @@ class ImpressionViewController: UIViewController {
         self.firstProduct = self.productModel.find(countsSorted[0].0)
         self.secondProduct = self.productModel.find(countsSorted[1].0)
         self.thirdProduct = self.productModel.find(countsSorted[2].0)
+        
         
         GlobalVars.productsFinded.append(self.firstProduct)
         GlobalVars.productsFinded.append(self.secondProduct)
