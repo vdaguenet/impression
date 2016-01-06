@@ -15,8 +15,8 @@ struct StoreExpressions {
     var adress = SQLite.Expression<String>("adress")
     var city = SQLite.Expression<String>("city")
     var hours = SQLite.Expression<String>("hours")
-    var lat = SQLite.Expression<Float>("lat")
-    var long = SQLite.Expression<Float>("long")
+    var lat = SQLite.Expression<Double>("lat")
+    var long = SQLite.Expression<Double>("long")
 }
 
 class StoreModel{

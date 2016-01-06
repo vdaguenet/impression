@@ -20,6 +20,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var locationManager = CLLocationManager()
     var userLocation = CLLocation(latitude: 21.282778, longitude: -157.829444)
     var listVisible = false
+    let storeModel = StoreModel()
     
     @IBAction func backFromChooseLoginView(segue: UIStoryboardSegue) {}
     
@@ -28,23 +29,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.storeListView.alpha = 0.0
         }
         
-        let nbStores = 5
-        
+
         self.ssss.addSearchIcon()
         
-        for (var i = 0; i < nbStores; i++) {
+        var i = 0
+        var nbStores = 0
+        for store in self.storeModel.findAll() {
             let y = CGFloat((190 + 12) * i)
+            let name = store.get(self.storeModel.expressions.name)
+            let adress = store.get(self.storeModel.expressions.adress)
+            
             self.storeListView.addSubview(StoreView(
                 frame: CGRectMake(12, y, self.storeListView.frame.width - 24, 190),
-                name: "Sephora Champs Elysées",
-                adress: "89, avenue des Champs Elysées",
-                city: "75002 Paris",
-                hours: "Du lundi au vendredi : 10:00 - 20:00",
+                name: name,
+                adress: adress,
+                city: store.get(self.storeModel.expressions.city),
+                hours: store.get(self.storeModel.expressions.hours),
                 distance: Float32((Double(arc4random()) / 0x100000000) * (1000.0 - 10.0) + 10.0),
                 parentController: self
             ))
             
-            self.addStorePin("Sephora Champs Elysées", baseline: "89, avenue des Champs Elysées", coord: CLLocationCoordinate2DMake(48.864716, 2.349014))
+            self.addStorePin(name, baseline: adress, coord: CLLocationCoordinate2DMake(store.get(self.storeModel.expressions.lat), store.get(self.storeModel.expressions.long)))
+            
+            i += 1
+            nbStores += 1
         }
         
         self.storeListView.contentSize.width = self.storeListView.frame.width
