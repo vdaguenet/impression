@@ -84,9 +84,9 @@ vos émotions, chaque jour.</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BfX-Hv-xRa">
-                                <rect key="frame" x="0.0" y="437" width="320" height="59"/>
+                                <rect key="frame" x="0.0" y="471" width="320" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="12"/>
                                 <state key="normal" title="C O M M E N C E R  L' E X P É R I E N C E ">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -98,6 +98,14 @@ vos émotions, chaque jour.</string>
                                 <rect key="frame" x="64" y="104" width="192" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kFl-5b-Sp4" customClass="DualCircleButton" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="135" y="388" width="45" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="B"/>
+                                <connections>
+                                    <segue destination="rig-9r-TEP" kind="push" id="Lt2-O3-kL3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1005,4 +1013,7 @@ champs suivants :</string>
         <image name="sight" width="40" height="40"/>
         <image name="sortir-amis" width="493" height="167"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gIW-iz-amf"/>
+    </inferredMetricsTieBreakers>
 </document>

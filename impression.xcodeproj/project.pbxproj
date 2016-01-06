@@ -52,6 +52,8 @@
 		4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637A1BF4A73600BB188A /* MapViewController.swift */; };
 		4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */; };
 		4FA3614A1C3D090E00E46DB8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA361491C3D090E00E46DB8 /* LoginViewController.swift */; };
+		4FA361531C3D0EEF00E46DB8 /* DualCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA361521C3D0EEF00E46DB8 /* DualCircleButton.swift */; };
+		4FA361571C3D304800E46DB8 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA361561C3D304800E46DB8 /* CustomSlider.swift */; };
 		4FAE19281C3C1E27009478BC /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAE19271C3C1E27009478BC /* StoreModel.swift */; };
 		4FCB733A1C3A68AB00C2FA22 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */; };
 		4FD5A4891C161D9A00ED389F /* StoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5A4881C161D9A00ED389F /* StoreView.swift */; };
@@ -212,6 +214,8 @@
 		4F93637A1BF4A73600BB188A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4F93637C1BF4DE2600BB188A /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		4FA361491C3D090E00E46DB8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4FA361521C3D0EEF00E46DB8 /* DualCircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DualCircleButton.swift; sourceTree = "<group>"; };
+		4FA361561C3D304800E46DB8 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		4FAE19271C3C1E27009478BC /* StoreModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 		4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		4FD5A4881C161D9A00ED389F /* StoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreView.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 				4FCB73391C3A68AB00C2FA22 /* CustomTextField.swift */,
 				4F501AF51C3BBB23002C59E0 /* RegisterTextField.swift */,
 				3CD85E9C1C3C191700FD75B2 /* TopAlignedLabel.swift */,
+				4FA361521C3D0EEF00E46DB8 /* DualCircleButton.swift */,
+				4FA361561C3D304800E46DB8 /* CustomSlider.swift */,
 			);
 			name = CustomUI;
 			sourceTree = "<group>";
@@ -729,11 +735,13 @@
 				4F10E88B1BEA158A004EED39 /* QuestionModel.swift in Sources */,
 				4F28C9651BF235590011AE27 /* SurpriseViewController.swift in Sources */,
 				4F1B71D21C3A88810048CED5 /* ChooseLoginViewController.swift in Sources */,
+				4FA361531C3D0EEF00E46DB8 /* DualCircleButton.swift in Sources */,
 				3CD85E9D1C3C191700FD75B2 /* TopAlignedLabel.swift in Sources */,
 				4FA3614A1C3D090E00E46DB8 /* LoginViewController.swift in Sources */,
 				4F501AED1C3BB6C3002C59E0 /* RegisterViewController.swift in Sources */,
 				4F93637B1BF4A73600BB188A /* MapViewController.swift in Sources */,
 				3C48ABCB1C3BCD9800C792B6 /* pushButton.swift in Sources */,
+				4FA361571C3D304800E46DB8 /* CustomSlider.swift in Sources */,
 				4FF7CE671BE779DC0043FD5D /* impression.xcdatamodeld in Sources */,
 				4F93637D1BF4DE2600BB188A /* CustomPointAnnotation.swift in Sources */,
 				4FAE19281C3C1E27009478BC /* StoreModel.swift in Sources */,
