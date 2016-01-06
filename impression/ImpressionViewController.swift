@@ -29,6 +29,7 @@ class ImpressionViewController: UIViewController {
     @IBOutlet weak var descript: UILabel!
     @IBOutlet weak var bouton12: pushButton!
     @IBOutlet weak var boutton11: pushButton!
+    @IBOutlet weak var Boutton21: pushButton!
     @IBOutlet weak var boutton13: pushButton!
     @IBOutlet weak var surprise: UIButton!
     @IBOutlet weak var cross: UIButton!
@@ -50,6 +51,7 @@ class ImpressionViewController: UIViewController {
         self.layerCount = 0;
         self.surprise.hidden = true;
         self.cross.hidden = true;
+        self.Boutton21.hidden = true
        
        
         /* Text INIT  */
@@ -84,7 +86,24 @@ class ImpressionViewController: UIViewController {
             self.cross.transform = CGAffineTransformMakeScale(0.8, 0.8)
             }, completion: nil)
         if(self.layerCount>0){
-            self.layerCount - 1 ;
+            if(self.layerCount == 1){
+                animationDepthOut(self.firstImage, image1Blur: self.firstBlurImage, image2: self.secondImage )
+                textOut(self.citation , text2: self.auteur );
+             
+                self.Boutton21.hidden = true
+                self.boutton11.hidden = false
+                self.bouton12.hidden = false
+                self.boutton13.hidden = false
+                 self.cross.hidden = true
+            }else if(self.layerCount == 2){
+                textIn(self.citation , text2: self.auteur );
+                textOut(self.produit , text2: self.descript);
+                animationDepthOut(self.secondImage, image1Blur:self.secondBlurImage, image2: self.thirdImage )
+                self.Boutton21.hidden = false
+                self.surprise.hidden = true
+            }
+            self.layerCount  = self.layerCount - 1 ;
+            print(self.layerCount)
         }
     }
     
@@ -106,7 +125,7 @@ class ImpressionViewController: UIViewController {
             if(self.layerCount == 1){
                 animationDepthIn(self.firstImage, image1Blur: self.firstBlurImage, image2: self.secondImage );
                 textIn(self.citation , text2: self.auteur );
-                
+                self.Boutton21.hidden = false
                 self.boutton11.hidden = true
                 self.bouton12.hidden = true
                 self.boutton13.hidden = true
@@ -116,7 +135,8 @@ class ImpressionViewController: UIViewController {
                 textOut(self.citation , text2: self.auteur );
                 animationDepthIn(self.secondImage, image1Blur:self.secondBlurImage, image2: self.thirdImage );
                 textIn(self.produit , text2: self.descript);
-                self.surprise.hidden = false;
+                self.Boutton21.hidden = true
+                self.surprise.hidden = false
             }
           //  print(self.layerCount)
             
@@ -145,12 +165,24 @@ class ImpressionViewController: UIViewController {
         image1 .alpha = 0.0
         image1Blur.transform  = CGAffineTransformMakeScale(4.0 , 4.0)
         image1Blur.alpha = 0.0
-        image2.transform  = CGAffineTransformMakeScale(1.1 , 1.1)
+        image2.transform  = CGAffineTransformMakeScale(1.2 , 1.2)
         image2.alpha = 1.0
         UIView.commitAnimations()
+        
     }
     
     func animationDepthOut(image1 : UIImageView , image1Blur: UIImageView, image2: UIImageView){
+        image1.hidden = false
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
+        UIView.setAnimationDuration(0.8)
+        image1 .transform = CGAffineTransformMakeScale(1.2 , 1.2)
+        image1 .alpha = 1.0
+        image1Blur.transform  = CGAffineTransformMakeScale(1.2 , 1.2)
+        image1Blur.alpha = 0.0
+        image2.transform  = CGAffineTransformMakeScale(1 , 1)
+        image2.alpha = 0.0
+        UIView.commitAnimations()
         
         
     }
