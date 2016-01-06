@@ -15,6 +15,8 @@ class QuestionViewController: UIViewController {
     var model: QuestionModel!
     var productIdAnswerTop: Int64!
     var productIdAnswerBottom: Int64!
+    
+    let slider = CustomSlider(frame: CGRectZero)
    
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var label: UILabel!
@@ -22,17 +24,12 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answerTop: UIImageView!
     @IBOutlet weak var answerTopBlurred: UIImageView!
     @IBOutlet weak var answerBottomBlurred: UIImageView!
-    @IBOutlet weak var slider: UISlider!{
-        didSet{
-            slider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
-            slider.minimumTrackTintColor = UIColor(red: 0.773, green: 0.773, blue: 0.773, alpha: 1.0)
-            slider.maximumTrackTintColor = UIColor(red: 0.773, green: 0.773, blue: 0.773, alpha: 1.0)
-            slider.thumbTintColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.2)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.slider.viewController = self
+        view.addSubview(self.slider)
         
         self.model = QuestionModel()
         let question = self.model.getRandomQuestion()
@@ -56,13 +53,17 @@ class QuestionViewController: UIViewController {
 
     }
     
-    @IBAction func onSlideEnd(sender: UISlider) {
-        var dest = 0.0
+    override func viewDidLayoutSubviews() {
+        let x = 0.5 * view.bounds.width - 7
+        let y = 0.5 * view.bounds.height - 75
         
-        if (sender.value > 0.5) {
-            dest = 1.0
+        self.slider.frame = CGRect(x: x, y: y, width: 40.0, height: 200.0)
+        self.slider.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_2))
+    }
+    
+    func onSliding(value: Double) {
+        if (value > 0.5) {
             // answer top
-            
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
             UIView.setAnimationDuration(0.4)
@@ -71,12 +72,12 @@ class QuestionViewController: UIViewController {
             self.answerTop.alpha = 1.0
             self.answerTopBlurred.alpha = 0.0
             UIView.commitAnimations()
-
-            
+        
+        
             GlobalVars.questionAnswers.append(self.productIdAnswerTop)
         } else {
             // answer bottom
-            
+        
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
             UIView.setAnimationDuration(0.4)
@@ -85,16 +86,10 @@ class QuestionViewController: UIViewController {
             self.answerTop.alpha = 0.0
             self.answerTopBlurred.alpha = 1.0
             UIView.commitAnimations()
-            
+        
             GlobalVars.questionAnswers.append(self.productIdAnswerBottom)
         }
-       
-        UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
-        UIView.setAnimationDuration(0.3)
-        self.slider.setValue(Float(dest), animated: true)
-        UIView.commitAnimations()
-        
+                
         let delay = 0.5 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) {
@@ -104,8 +99,6 @@ class QuestionViewController: UIViewController {
                 self.gotoImpression()
             }
         }
-        
-       
     }
     
     func blurImage(image: UIImage) -> UIImage {
