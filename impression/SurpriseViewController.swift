@@ -109,9 +109,17 @@ class SurpriseViewController: UIViewController {
     func setImages(){
         
         imageImpression.image =  UIImage(named :"impression_1_1.png");
+        imageProductTop.image = UIImage(named : "product_1.png");
+        imageProductMiddle.image = UIImage(named : "product_2.png");
+        imageProductBottom.image = UIImage(named : "product_3.png");
+        
+        /*
+        
         imageProductTop.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.image ));
         imageProductMiddle.image = UIImage(named :self.secondProduct.get(self.productModel.expressions.image ));
         imageProductBottom.image = UIImage(named :self.thirdProduct.get(self.productModel.expressions.image ));
+        
+        */
         
         
         

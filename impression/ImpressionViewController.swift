@@ -122,15 +122,23 @@ class ImpressionViewController: UIViewController {
             self.layerCount  = self.layerCount - 1 ;
         }
     }
-    
+    func CGPointDistanceSquared(from from: CGPoint, to: CGPoint) -> CGFloat {
+        return (from.x - to.x) * (from.x - to.x) + (from.y - to.y) * (from.y - to.y);
+    }
+    func CGPointDistance(from from: CGPoint, to: CGPoint) -> CGFloat {
+        return sqrt(CGPointDistanceSquared(from: from, to: to));
+    }
     func longTouch( longTouch : UIGestureRecognizer){
         let pos = longTouch.locationInView(self.myView)
+        var dist = CGPointDistance(from: pos, to: self.boutton11.frame.origin )
+        print(dist)
         if(self.layerCount==0){
-            if(pos.x.distanceTo(self.boutton11.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton11.frame.origin.y) < 1.0){
-                setImage(2);
-            }else if(pos.x.distanceTo(self.boutton12.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton12.frame.origin.y) < 1.0){
+            if(CGPointDistance(from: pos, to: self.boutton11.frame.origin ) < 40){
                 setImage(1);
-            }else if(pos.x.distanceTo(self.boutton13.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton13.frame.origin.y) < 1.0){
+               
+            }else if(CGPointDistance(from: pos, to: self.boutton12.frame.origin ) < 40){
+                setImage(2);
+            }else if(CGPointDistance(from: pos, to: self.boutton13.frame.origin ) < 40){
                 setImage(0);
             }
         }
@@ -139,8 +147,8 @@ class ImpressionViewController: UIViewController {
         if(longTouch.state == UIGestureRecognizerState.Began){
             
             if(self.layerCount == 0){
-            touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
-                    self.cross.hidden = false ;
+                touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
+                self.cross.hidden = false ;
             }else if(self.layerCount == 1){
                 touchBlur(self.secondImage, image1Blur: self.secondBlurImage);
             }
@@ -265,9 +273,9 @@ class ImpressionViewController: UIViewController {
             return a.1 > b.1
         })
         
-        self.firstProduct = self.productModel.find(countsSorted[0].0)
-        self.secondProduct = self.productModel.find(countsSorted[1].0)
-        self.thirdProduct = self.productModel.find(countsSorted[2].0)
+        self.firstProduct = self.productModel.find(Int64(2))
+        self.secondProduct = self.productModel.find(Int64(3))
+        self.thirdProduct = self.productModel.find(Int64(5))
         
         
         GlobalVars.productsFinded.append(self.firstProduct)
