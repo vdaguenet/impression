@@ -26,12 +26,10 @@ class IntroViewController: UIViewController {
         self.bySisley.center.y += 50
         self.bySisley.alpha = 0
         
-        self.introText.center.y += 25
+        self.introText.center.y += 10
         self.introText.alpha = 0
         
-//        self.circleButton.center.y += 25
         self.circleButton.alpha = 0
-//        self.btnStart.center.y += 25
         self.btnStart.alpha = 0
     }
     
@@ -47,7 +45,7 @@ class IntroViewController: UIViewController {
             }, completion: nil)
         
         UIView.animateWithDuration(1.0, delay: 0.8, options: [ .CurveEaseOut ], animations: {
-            self.introText.center.y -= 25
+            self.introText.center.y -= 10
             self.introText.alpha = 1
             }, completion: nil)
         

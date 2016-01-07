@@ -964,10 +964,13 @@ champs suivants :</string>
                     <navigationItem key="navigationItem" id="yEm-q6-WFt"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="chooseStore" destination="VJ2-2P-9my" id="7wP-uP-dIO"/>
                         <outlet property="imageImpression" destination="9AM-zo-n9i" id="inI-4V-i7z"/>
                         <outlet property="imageProductBottom" destination="d2F-f4-UGq" id="yep-KE-EDR"/>
                         <outlet property="imageProductMiddle" destination="eHc-En-Jat" id="r6G-TW-WH8"/>
                         <outlet property="imageProductTop" destination="P0K-2V-HfE" id="HJb-sU-Ivt"/>
+                        <outlet property="text" destination="moc-oz-CRx" id="Rw8-UY-Rq7"/>
+                        <outlet property="titleLabel" destination="atc-Vr-jOh" id="PpC-Wp-9QY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qeL-qh-I7u" userLabel="First Responder" sceneMemberID="firstResponder"/>
