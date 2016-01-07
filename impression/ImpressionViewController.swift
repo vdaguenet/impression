@@ -90,10 +90,8 @@ class ImpressionViewController: UIViewController {
         self.firstImage.image = UIImage(named :"impression_1_1.png");
         self.secondImage.image = UIImage(named :GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.imageCitation ));
         self.thirdImage.image = UIImage(named :GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.image ));
-        print("changed source ")
         self.firstBlurImage.image = self.firstImage.image
         self.secondBlurImage.image = self.secondImage.image
-        
         self.firstImage.transform = CGAffineTransformMakeScale(1.2, 1.2)
     }
     
@@ -130,15 +128,15 @@ class ImpressionViewController: UIViewController {
     }
     func longTouch( longTouch : UIGestureRecognizer){
         let pos = longTouch.locationInView(self.myView)
-        var dist = CGPointDistance(from: pos, to: self.boutton11.frame.origin )
-        print(dist)
         if(self.layerCount==0){
             if(CGPointDistance(from: pos, to: self.boutton11.frame.origin ) < 40){
+                print("boutton11")
                 setImage(1);
-               
             }else if(CGPointDistance(from: pos, to: self.boutton12.frame.origin ) < 40){
+                  print("boutton12")
                 setImage(2);
             }else if(CGPointDistance(from: pos, to: self.boutton13.frame.origin ) < 40){
+                  print("boutton13")
                 setImage(0);
             }
         }
@@ -177,7 +175,6 @@ class ImpressionViewController: UIViewController {
         }
         
     }
-    
     
     func touchBlur(image1 : UIImageView , image1Blur: UIImageView){
         UIView.beginAnimations(nil, context: nil)
@@ -272,6 +269,13 @@ class ImpressionViewController: UIViewController {
         var countsSorted = counts.sort({ (a, b) -> Bool in
             return a.1 > b.1
         })
+        /*
+        Appel à la bse de données. Il fonctione mais on ne s'en sert pas pour la démo afin de montrer des produits specifiques
+        
+        self.firstProduct = self.productModel.find(countsSorted[0].0)
+        self.secondProduct = self.productModel.find(countsSorted[1].0))
+        self.thirdProduct = self.productModel.find(countsSorted[2].0))
+        */
         
         self.firstProduct = self.productModel.find(Int64(2))
         self.secondProduct = self.productModel.find(Int64(3))

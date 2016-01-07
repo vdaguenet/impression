@@ -206,21 +206,21 @@ vos émotions, chaque jour.</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O99-ES-1kO" userLabel="citation">
                                 <rect key="frame" x="41" y="356" width="239" height="124"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zIW-Hl-MiD" userLabel="auteurCitation">
                                 <rect key="frame" x="108" y="468" width="171" height="24"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GPI-64-deV" userLabel="produit">
                                 <rect key="frame" x="42" y="309" width="238" height="66"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,9 +250,9 @@ vos émotions, chaque jour.</string>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HOu-hN-XkS" userLabel="cross">
-                                <rect key="frame" x="8" y="20" width="30" height="30"/>
+                                <rect key="frame" x="12" y="28" width="9" height="18"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="cross"/>
+                                <state key="normal" backgroundImage="arrow-left"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="yk3-DW-JsK" eventType="touchUpInside" id="eF4-Q7-3Dg"/>
                                 </connections>
@@ -344,7 +344,7 @@ vos émotions, chaque jour.</string>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </scrollView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO" customClass="CustomTextField" customModule="impression" customModuleProvider="target">
-                                        <rect key="frame" x="65.000000871583765" y="8" width="242" height="40"/>
+                                        <rect key="frame" x="65" y="8" width="242" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
@@ -992,7 +992,6 @@ champs suivants :</string>
         <image name="button-background" width="619" height="117"/>
         <image name="by-sisley" width="292" height="73"/>
         <image name="choose-background" width="375" height="667"/>
-        <image name="cross" width="646" height="627"/>
         <image name="default" width="750" height="1334"/>
         <image name="general-background" width="375" height="667"/>
         <image name="impression" width="325" height="53"/>
