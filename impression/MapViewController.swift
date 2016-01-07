@@ -26,7 +26,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewWillAppear(animated: Bool) {
         if (self.listVisible == false) {
-            self.storeListView.alpha = 0.0
+//            self.storeListView.alpha = 0.0
+            self.storeListView.center.y += self.storeListView.frame.height
         }
         
 
@@ -105,17 +106,24 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func onListButtonTouch(sender: AnyObject) {
         if (self.listVisible == true) {
-            self.mapView.alpha = 1.0
-            self.resetPositionBtn.alpha = 1.0
-            self.storeListView.alpha = 0.0
-            self.listButton.setImage(UIImage(named: "list"), forState: UIControlState.Normal)
-            self.listVisible = false
+            UIView.animateWithDuration(0.5, delay: 0.0, options: [ .CurveEaseInOut ], animations: {
+                self.mapView.alpha = 1.0
+                self.resetPositionBtn.alpha = 1.0
+                self.storeListView.center.y += self.storeListView.frame.height
+                self.listButton.setImage(UIImage(named: "list"), forState: UIControlState.Normal)
+                }, completion: { (finished: Bool) -> Void in
+                    self.listVisible = false
+                })
         } else {
-            self.mapView.alpha = 0.0
-            self.resetPositionBtn.alpha = 0.0
-            self.storeListView.alpha = 1.0
-            self.listButton.setImage(UIImage(named: "back-map"), forState: UIControlState.Normal)
-            self.listVisible = true
+            
+            UIView.animateWithDuration(0.5, delay: 0.0, options: [ .CurveEaseInOut ], animations: {
+                    self.mapView.alpha = 0.0
+                    self.storeListView.center.y -= self.storeListView.frame.height
+                    self.listButton.setImage(UIImage(named: "back-map"), forState: UIControlState.Normal)
+                }, completion: { (finished: Bool) -> Void in
+                    self.resetPositionBtn.alpha = 0.0
+                    self.listVisible = true
+                })
         }
     }
     
