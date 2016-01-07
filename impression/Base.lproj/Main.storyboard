@@ -250,7 +250,7 @@ vos émotions, chaque jour.</string>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HOu-hN-XkS" userLabel="cross">
-                                <rect key="frame" x="12" y="28" width="9" height="18"/>
+                                <rect key="frame" x="12" y="28" width="15" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="arrow-left"/>
                                 <connections>
