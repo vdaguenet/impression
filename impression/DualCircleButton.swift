@@ -108,7 +108,7 @@ class DualCircleButton: UIButton {
         self.frame.origin.x = rect.origin.x + 0.5 * rect.width
         self.frame.origin.y = rect.origin.y + 0.28 * rect.height
     }
-    
+    /*
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
@@ -123,6 +123,6 @@ class DualCircleButton: UIButton {
         UIView.animateWithDuration(0.4, delay: 0.0, options: [ .AllowUserInteraction  ], animations: {
             self.alpha = 1.0
             }, completion: nil)
-    }
+    } */
     
 }
