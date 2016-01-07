@@ -14,10 +14,12 @@ class BigCircle: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.userInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.userInteractionEnabled = true
     }
     
     func draw() {
@@ -54,15 +56,17 @@ class BigCircle: UIView {
 class SmallCircle: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.userInteractionEnabled = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.userInteractionEnabled = true
     }
     
     func draw() {
         self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.15)
-        self.layer.cornerRadius = 0.5 * self.frame.width;
+        self.layer.cornerRadius = 0.5 * self.frame.width
     }
 }
 
@@ -78,6 +82,8 @@ class DualCircleButton: UIButton {
         self.circleBig.autoplay = true;
         self.addSubview(self.circleBig)
         self.addSubview(self.circleSmall)
+        self.userInteractionEnabled = true
+        self.contentEdgeInsets = UIEdgeInsetsMake(-50, -50, 100, 100);
     }
     
     override init(frame: CGRect) {
@@ -85,6 +91,8 @@ class DualCircleButton: UIButton {
         
         self.addSubview(self.circleBig)
         self.addSubview(self.circleSmall)
+        self.userInteractionEnabled = true
+        self.contentEdgeInsets = UIEdgeInsetsMake(-50, -50, 100, 100);
     }
     
     override func drawRect(rect: CGRect) {
@@ -100,13 +108,19 @@ class DualCircleButton: UIButton {
         self.frame.origin.x = rect.origin.x + 0.5 * rect.width
         self.frame.origin.y = rect.origin.y + 0.28 * rect.height
     }
+    
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIView.animateWithDuration(0.4, delay: 0.0, options: [.AllowUserInteraction, .Autoreverse ], animations: {
+        super.touchesBegan(touches, withEvent: event)
+        UIButton.animateWithDuration(0.4, delay: 0.0, options: [ .AllowUserInteraction ], animations: {
             self.alpha = 0.5
-            }, completion: nil)
+            },
+            completion: nil
+        )
     }
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        UIView.animateWithDuration(0.4, delay: 0.0, options: [.AllowUserInteraction, .Autoreverse  ], animations: {
+        super.touchesEnded(touches, withEvent: event)
+        UIView.animateWithDuration(0.4, delay: 0.0, options: [ .AllowUserInteraction  ], animations: {
             self.alpha = 1.0
             }, completion: nil)
     }

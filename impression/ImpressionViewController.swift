@@ -31,7 +31,7 @@ class ImpressionViewController: UIViewController {
     @IBOutlet weak var boutton11: DualCircleButton!
     @IBOutlet weak var Boutton21: DualCircleButton!
     @IBOutlet weak var boutton13: DualCircleButton!
-    @IBOutlet weak var surprise: UIButton!
+    @IBOutlet weak var surprise: DualCircleButton!
     @IBOutlet weak var cross: UIButton!
     @IBOutlet weak var labelDescript: UILabel!
     var  products = [Int64: Int]()

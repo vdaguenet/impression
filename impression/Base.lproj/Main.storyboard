@@ -263,14 +263,6 @@ vos émotions, chaque jour.</string>
                                     <action selector="buttonPressed:" destination="yk3-DW-JsK" eventType="touchUpInside" id="eF4-Q7-3Dg"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L3R-SZ-cJc">
-                                <rect key="frame" x="111" y="500" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="SURPRISE !"/>
-                                <connections>
-                                    <segue destination="sn7-4X-8fh" kind="push" id="9e2-LU-FNa"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IpT-Ke-KBa" userLabel="Boutton21" customClass="DualCircleButton" customModule="impression" customModuleProvider="target">
                                 <rect key="frame" x="144" y="500" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -283,6 +275,14 @@ vos émotions, chaque jour.</string>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="L3R-SZ-cJc" customClass="DualCircleButton" customModule="impression" customModuleProvider="target">
+                                <rect key="frame" x="140" y="495" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="S"/>
+                                <connections>
+                                    <segue destination="sn7-4X-8fh" kind="push" id="9e2-LU-FNa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -356,7 +356,7 @@ vos émotions, chaque jour.</string>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </scrollView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Chercher un adresse..." textAlignment="natural" minimumFontSize="17" id="Uae-F1-QZO" customClass="CustomTextField" customModule="impression" customModuleProvider="target">
-                                        <rect key="frame" x="65.000000278565494" y="8" width="242" height="40"/>
+                                        <rect key="frame" x="65.000000568926893" y="8" width="242" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="15"/>
@@ -899,7 +899,7 @@ champs suivants :</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="eHc-En-Jat">
-                                <rect key="frame" x="197.99999985975376" y="171" width="102" height="102"/>
+                                <rect key="frame" x="198" y="171" width="101.99999985975376" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" id="P0K-2V-HfE">
