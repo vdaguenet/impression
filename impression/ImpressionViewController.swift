@@ -22,12 +22,13 @@ class ImpressionViewController: UIViewController {
     @IBOutlet weak var secondImage: UIImageView!
     @IBOutlet weak var secondBlurImage: UIImageView!
     @IBOutlet weak var thirdImage: UIImageView!
+    @IBOutlet var myView: UIView!
     
     @IBOutlet weak var citation: UILabel!
     @IBOutlet weak var auteur: UILabel!
     @IBOutlet weak var produit: UILabel!
     @IBOutlet weak var descript: UILabel!
-    @IBOutlet weak var bouton12: DualCircleButton!
+    @IBOutlet weak var boutton12: DualCircleButton!
     @IBOutlet weak var boutton11: DualCircleButton!
     @IBOutlet weak var Boutton21: DualCircleButton!
     @IBOutlet weak var boutton13: DualCircleButton!
@@ -70,32 +71,30 @@ class ImpressionViewController: UIViewController {
         
         
         self.firstImage.image = UIImage(named :"impression_1_1.png");
-        self.secondImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.imageCitation ));
+       /* self.secondImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.imageCitation ));
         self.thirdImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.image ));
         
         self.firstBlurImage.image = self.blurImage(15.0, image : self.firstImage.image! );
-        self.secondBlurImage.image = self.blurImage(15.0, image : self.secondImage.image! );
+        self.secondBlurImage.image = self.blurImage(15.0, image : self.secondImage.image! );*/
         
-        self.firstImage.transform = CGAffineTransformMakeScale(1.4, 1.4)
+        self.firstImage.transform = CGAffineTransformMakeScale(1.2, 1.2)
        
     }
     
-    @IBAction func setImage(sender: UIButton) {
-        print("Swag Button")
-        let buttonId = Int(sender.accessibilityIdentifier!)
-         print(buttonId )
-        self.citation.text  = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.citation);
-        self.auteur.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.auteurCitation);
-        self.descript.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.description);
-        self.produit.text = GlobalVars.productsFinded[buttonId!].get(self.productModel.expressions.name);
+    func setImage(sender: Int) {
+        let buttonId = sender
+        self.citation.text  = GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.citation);
+        self.auteur.text = GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.auteurCitation);
+        self.descript.text = GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.description);
+        self.produit.text = GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.name);
         self.firstImage.image = UIImage(named :"impression_1_1.png");
-        self.secondImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.imageCitation ));
-        self.thirdImage.image = UIImage(named :self.firstProduct.get(self.productModel.expressions.image ));
+        self.secondImage.image = UIImage(named :GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.imageCitation ));
+        self.thirdImage.image = UIImage(named :GlobalVars.productsFinded[buttonId].get(self.productModel.expressions.image ));
+        print("changed source ")
+        self.firstBlurImage.image = self.firstImage.image
+        self.secondBlurImage.image = self.secondImage.image
         
-        self.firstBlurImage.image = self.blurImage(15.0, image : self.firstImage.image! );
-        self.secondBlurImage.image = self.blurImage(15.0, image : self.secondImage.image! );
-        
-        self.firstImage.transform = CGAffineTransformMakeScale(1.4, 1.4)
+        self.firstImage.transform = CGAffineTransformMakeScale(1.2, 1.2)
     }
     
     @IBAction func buttonPressed(sender: AnyObject) {
@@ -110,7 +109,7 @@ class ImpressionViewController: UIViewController {
              
                 self.Boutton21.hidden = true
                 self.boutton11.hidden = false
-                self.bouton12.hidden = false
+                self.boutton12.hidden = false
                 self.boutton13.hidden = false
                  self.cross.hidden = true
             }else if(self.layerCount == 2){
@@ -125,14 +124,25 @@ class ImpressionViewController: UIViewController {
     }
     
     func longTouch( longTouch : UIGestureRecognizer){
+        let pos = longTouch.locationInView(self.myView)
+        if(self.layerCount==0){
+            if(pos.x.distanceTo(self.boutton11.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton11.frame.origin.y) < 1.0){
+                setImage(2);
+            }else if(pos.x.distanceTo(self.boutton12.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton12.frame.origin.y) < 1.0){
+                setImage(1);
+            }else if(pos.x.distanceTo(self.boutton13.frame.origin.x) < 1.0 && pos.y.distanceTo(self.boutton13.frame.origin.y) < 1.0){
+                setImage(0);
+            }
+        }
+        
+        
         if(longTouch.state == UIGestureRecognizerState.Began){
+            
             if(self.layerCount == 0){
-                touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
-                self.cross.hidden = false ;
+            touchBlur(self.firstImage, image1Blur: self.firstBlurImage);
+                    self.cross.hidden = false ;
             }else if(self.layerCount == 1){
                 touchBlur(self.secondImage, image1Blur: self.secondBlurImage);
-                
-                
             }
             
         }else if(longTouch.state == UIGestureRecognizerState.Ended) {
@@ -142,7 +152,7 @@ class ImpressionViewController: UIViewController {
                 textIn(self.citation , text2: self.auteur );
                 self.Boutton21.hidden = false
                 self.boutton11.hidden = true
-                self.bouton12.hidden = true
+                self.boutton12.hidden = true
                 self.boutton13.hidden = true
                 
                 
@@ -153,6 +163,7 @@ class ImpressionViewController: UIViewController {
                 self.Boutton21.hidden = true
                 self.surprise.hidden = false
             }
+           
           //  print(self.layerCount)
             
         }
@@ -162,7 +173,7 @@ class ImpressionViewController: UIViewController {
     
     func touchBlur(image1 : UIImageView , image1Blur: UIImageView){
         UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDelay(0.6)
+        UIView.setAnimationDelay(0.0)
         UIView.setAnimationCurve(UIViewAnimationCurve.EaseOut)
         UIView.setAnimationDuration(0.4)
         image1Blur.alpha = 0.2
